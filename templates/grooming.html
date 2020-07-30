@@ -1,18 +1,5 @@
-<html>
+{% extends 'base.html' %}
+{% block content %}
 
-<head>
-    <title>Hello Flask Contact</title>
-</head>
-
-<body>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li </ul>
-    </nav>
-
-    <h1>Contact Us!</h1>
-</body>
-
-</html>
+    <h1>Doggie Grooming</h1>
+{% endblock %}
