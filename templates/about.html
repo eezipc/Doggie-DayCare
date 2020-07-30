@@ -1,14 +1,23 @@
+
+  
 <html>
 
 <head>
-    <title>Hello Flask</title>
+    <title>Hello Flask About</title>
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('daycare') }}">Daycare</a></li>
+            <li><a href="{{ url_for('grooming') }}">Grooming</a></li>
+            <li><a href="{{ url_for('overnight') }}">Overnight</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            
+            
         </ul>
     </nav>
 
@@ -16,3 +25,4 @@
 </body>
 
 </html>
+
