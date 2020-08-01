@@ -2,16 +2,16 @@
 [{
         "service": "Doggie Grooming",
         "description": "This is a full wash and dry.",
-        "image_source": "http://www.panhistoria.com/Stacks/Novels/characterimages/T27293.jpg"
+        "image_source": "../static/assets/img/groom.jpg"
     },
     {
         "service": "Doggie Day Care",
         "description": "This is a full day of taking care of your dog",
-        "image_source": "http://www.filmofilia.com/wp-content/uploads/2011/07/hobbit_0.jpg"
+        "image_source": "../static/assets/img/daycare.jpg"
     },
     {
         "service": "Doggie Sleepover",
         "description": "This is a full night of taking care of your dog",
-        "image_source": "https://images.tvnz.co.nz/tvnz_images/hobbit_news/2012/10/dwarf_oin_hobbit_E1.jpg"
+        "image_source": "../static/assets/img/sleepover.jpg"
     }
 ]
