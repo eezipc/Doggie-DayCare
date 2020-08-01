@@ -1,11 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
-    <div class="col-12"><h1>Doggie Grooming</h1></div>
-  <div class="col-6 col-md-4">Grooming Prices Here</div>
-  <div class="col-12 col-md-8">Information on Daycare Here</div>
-  <div class="col-6 col-md-4">Book A Session Here</div>
-  <div class="col-12 col-md-8">Information on Overnight Here</div>
-  <div class="col-12 col-md-4"><h1><a class="btn btn-primary btn-xl js-scroll-trigger" href="#grooming">Book Here</a></h1></div>
-</div>
+    <div class="col-12"><h1>{{page_title}}</h1></div>
+  </div>
+  <div class="container"> 
+        <div class="row"> 
+            <div class="col-lg-6 mb-4"> 
+                <div class="card"> 
+                    <img class="card-img-top" src="" alt=""> 
+  
+                    <div class="card-body"> 
+                        <h5 class="card-title">Card title</h5> 
+                        <p class="card-text"> 
+                            This is the left Card
+                        </p> 
+  
+                        <a href="#" class="btn btn-outline-primary btn-sm"> 
+                            Card link 
+                        </a> 
+                        <a href="#" class="btn btn-outline-secondary btn-sm"> 
+                            <i class="far fa-heart"></i></a> 
+                    </div> 
+                </div> 
+            </div> 
+            
+            <div class="col-lg-6 mb-4"> 
+                <div class="card"> 
+                    <img class="card-img-top" src="" alt=""> 
+  
+                    <div class="card-body"> 
+                    {% for member in doggie %}
+                        <h5 class="card-title">{{ member.service }}
+        </h5> 
+                        <p class="card-text"> 
+                           <p>{{ member.description }}</p>
+                        </p> 
+                          
+                        <a href="#" class="btn btn-outline-primary btn-sm"> 
+                            Card link 
+                        </a> 
+                        <img class="img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
+                   {% endfor %}
+                    </div> 
+                </div> 
+            </div> 
+            
+        </div> 
+    </div> 
 {% endblock %}
