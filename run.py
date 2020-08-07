@@ -15,10 +15,13 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
+  
     data = []
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("index.html", page_title="Home", doggie=data)
+
+
 
 @app.route('/about')
 def about():
@@ -26,6 +29,17 @@ def about():
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("about.html", page_title="Doggie About")
+
+
+@app.route('/test')
+def test():
+    return render_template("test.html", doggiebook=mongo.db.doggiebook.find())
+    data = []
+    with open("data/doggie.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("test.html", page_title="Doggie About")
+
+
 
 @app.route('/contact')
 def contact():
@@ -48,7 +62,7 @@ def grooming():
         data = json.load(json_data)
     return render_template("grooming.html", page_title="Doggie Grooming", doggie=data)
 
-@app.route('/login')
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     data = []
     with open("data/doggie.json", "r") as json_data:
@@ -56,12 +70,30 @@ def login():
     return render_template("login.html", page_title="Doggie Login", doggie=data)
 
 
+
+@app.route('/loginpage', methods=['POST', 'GET'])
+def loginpage():
+    if 'email_address' in session:
+        return 'You are logged in as ' + session['email_address']
+
+    return render_template('loginpage.html')
+    doggielogin = mongo.db.doggielogin
+    login_user = doggielogin.find_one({'email_address': request.form['email_address']})
+
+    if login_user:
+        if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
+            session['email_address'] = request.form['email_address']
+            return redirect(url_for('loginpage'))
+
+    return 'Invalid username or password'
+
+
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     data = []
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
-        
+
     if request.method == 'POST':
         doggielogin = mongo.db.doggielogin
         existing_user = doggielogin.find_one({'email_address' : request.form['email_address']})
@@ -82,12 +114,6 @@ def overnight():
         data = json.load(json_data)
     return render_template("overnight.html", page_title="Doggie Sleepover", doggie=data)
 
-@app.route('/tasks')
-def tasks():
-    data = []
-    with open("data/doggie.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("tasks.html", page_title="Doggie Sleepover", doggie=data)
 
 
 if __name__ == '__main__':
