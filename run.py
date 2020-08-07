@@ -1,6 +1,20 @@
+import pymongo
 import os
 import json
 from flask import Flask, render_template
+
+MONGODB_URI = os.getenv("MONGO_URI")
+DBS_NAME = "doggiedatabase"
+COLLECTION_NAME = "doggielogin"
+COLLECTION_NAME2 = "doggiebook"
+
+def mongo_connect(url):
+    try:
+        conn = pymongo.MongoClient(url)
+        return conn
+    except pymongo.errors.ConnectionFailure as e:
+        print("Could not connect you fucker: %s") % e
+
 
 app = Flask(__name__)
 
