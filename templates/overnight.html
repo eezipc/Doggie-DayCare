@@ -12,7 +12,7 @@
   
                     <div class="card-body"> 
                         <h5 class="card-title">Card title</h5> 
-                        <form>
+                        <form action="{{ url_for('insert_booking') }}" method="POST">
   <div action="" method="POST" class="form-group">
     <label for="email_address">Enter Your Email address</label>
     <input type="email" class="form-control" name= "email_address" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -32,9 +32,9 @@
     <input type="text" class="form-control" id="datepicker"  name="date" placeholder="Choose Your Date">
   </div>
 
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+   <div class="form-group">
+    <label for="nights">Service Required</label>
+    <input type="text" class="form-control" id="nights" name="nights" placeholder="Nights Required">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form> 

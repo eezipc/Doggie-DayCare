@@ -54,6 +54,7 @@ def daycare():
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("daycare.html", page_title="Doggie Daycare", doggie=data)
+    
 
 @app.route('/grooming', methods=['POST', 'GET'])
 def grooming():
@@ -63,13 +64,19 @@ def grooming():
     return render_template("grooming.html", page_title="Doggie Grooming", doggie=data)
     
 
-@app.route('/insert_task', methods=['POST'])
-def insert_task():
+@app.route('/insert_booking', methods=['POST'])
+def insert_booking():
     doggiebook = mongo.db.doggiebook
     doggiebook.insert_one(request.form.to_dict())
-    return redirect(url_for('contact'))
-   
+    return redirect(url_for('confirm'))
 
+
+@app.route('/confirm')
+def confirm():
+    data = []
+    with open("data/doggie.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("confirm.html", page_title="Doggie Confirmation", doggie=data)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
