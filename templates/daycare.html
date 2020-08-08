@@ -50,17 +50,17 @@
                     <img class="card-img-top" src="" alt=""> 
   
                     <div class="card-body"> 
-                    {% for member in doggie %}
-                   <h5 class="card-title"><a href="daycare"><i class="fas fa-paw"></i>{{ member.service }} </a></h5> 
+                     {% for member in doggie %}
+                    
+                        <h5 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h5> 
                         <p class="card-text"> 
                            <p>{{ member.description }}</p>
                         </p> 
-                          
-                        
+                           
                         <img class="img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
-                   <p><a href="daycare" class="btn btn-sm"> 
+                   <p><a href="grooming" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
-                        <a href="daycare" class="btn btn-outline-primary btn-sm"> 
+                        <a href="{{ member.url }}" class="btn btn-outline-primary btn-sm"> 
                             Click Here For More Information
                         </a></p>
                    {% endfor %}

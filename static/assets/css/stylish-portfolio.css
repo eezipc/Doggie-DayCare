@@ -86,7 +86,7 @@ h6 {
 }
 
 .navbarcss {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/dogbackground.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/dogbackgroundnav.jpg");
   
   /* background-position: center center;
   background-repeat: no-repeat;
@@ -134,7 +134,7 @@ h6 {
 }
 
 .masthead {
-  min-height: 30rem;
+  min-height: 120rem;
   position: relative;
   display: table;
   width: 100%;
