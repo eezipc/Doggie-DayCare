@@ -2,16 +2,21 @@
 [{
         "service": "Doggie Grooming",
         "description": "This is a full wash and dry.",
-        "image_source": "../static/assets/img/groom.jpg"
+        "image_source": "../static/assets/img/groom.jpg",
+        "url": "grooming"
+
     },
     {
         "service": "Doggie Day Care",
         "description": "This is a full day of taking care of your dog",
-        "image_source": "../static/assets/img/daycare.jpg"
+        "image_source": "../static/assets/img/daycare.jpg",
+        "url": "daycare"
+        
     },
     {
         "service": "Doggie Sleepover",
         "description": "This is a full night of taking care of your dog",
-        "image_source": "../static/assets/img/sleepover.jpg"
+        "image_source": "../static/assets/img/sleepover.jpg",
+        "url": "overnight"
     }
 ]

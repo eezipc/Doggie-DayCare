@@ -37,16 +37,18 @@
   
                     <div class="card-body"> 
                     {% for member in doggie %}
-                        <h5 class="card-title">{{ member.service }}
-        </h5> 
+                    
+                        <h5 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h5> 
                         <p class="card-text"> 
                            <p>{{ member.description }}</p>
                         </p> 
-                          
-                        <a href="#" class="btn btn-outline-primary btn-sm"> 
-                            Card link 
-                        </a> 
+                           
                         <img class="img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
+                   <p><a href="grooming" class="btn btn-sm"> 
+                            <i class="fas fa-paw"></i></a>
+                        <a href="{{ member.url }}" class="btn btn-outline-primary btn-sm"> 
+                            Click Here For More Information
+                        </a></p>
                    {% endfor %}
                     </div> 
                 </div> 
