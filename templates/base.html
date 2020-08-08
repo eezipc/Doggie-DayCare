@@ -12,8 +12,16 @@
   <title>Doggie Day Care</title>
     
 
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<style type="text/css">div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{z-index: 2222 !important;}</style>
+    
+
+
   <!-- Bootstrap Core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  
   <!--<link href="{{ url_for('static', filename='../static/assets/vendor/bootstrap/css/bootstrap.min.css' ) }}" rel="stylesheet"> -->
 
   <!-- Custom Fonts -->
@@ -24,6 +32,7 @@
   <link href="{{ url_for('static', filename='../static/assets/css/stylish-portfolio.min.css' ) }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='../static/assets/css/stylish-portfolio.css' ) }}" rel="stylesheet">
  
+
  
 </head>
 
@@ -210,7 +219,7 @@
 
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
 
   <!-- Bootstrap core JavaScript -->
   <script src="{{ url_for('static', filename='../static/assets/vendor/jquery/jquery.min.js' ) }}"></script>
@@ -222,19 +231,14 @@
   <!-- Custom scripts for this template -->
   <script src="{{ url_for('static', filename='../static/assets/js/stylish-portfolio.min.js' ) }}"></script>
 
-<script type="text/javascript">
-      
-        
-$(document).ready(function(){
-    $('.datepicker').datepicker();
-  });
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $('#datepicker').datepicker();
+  </script>
 
 
 
-        document.getElementById("matfix").addEventListener("click", function(e) {
-	e.stopPropagation();
-});
-    </script>
 
 </body>
 
