@@ -41,7 +41,7 @@ def test():
 
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['POST', 'GET'])
 def contact():
     data = []
     with open("data/doggie.json", "r") as json_data:
