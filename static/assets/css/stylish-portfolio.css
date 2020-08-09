@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro';
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
 }
 
 .btn-xl {
@@ -156,6 +157,10 @@ background: url("../img/dogbackground.jpg");
 background: url("../img/dogbackground.jpg");
 
 } 
+
+
+    
+}
 
 .masthead h1 {
   font-size: 4rem;
