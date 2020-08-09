@@ -11,9 +11,9 @@
         <div class="row"> 
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
-                    <img class="card-img-top" src="../static/assets/img/puppy.jpg" alt=""> 
-  
-                    <div class="card-img-overlay"> 
+                    <img class="card-img-top" src="" alt=""> 
+ <div class="cardbackground">
+                    <div class="cardcontent"> 
                         <h5 class="card-title">Welcome to Doggie DayCare</h5> 
                         <p class="card-text"> 
                             We are a one stop shop for all your Doggie needs.
@@ -23,37 +23,38 @@
                         </p> 
                         <a href="contact" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
-                        <a href="contact" class="btn btn-outline-primary btn-sm"> 
-                            Contact us
-                        </a> 
+                        <button onclick="window.location.href='{{ url_for('contact') }}';" class="button" ><span>Contact </span></button> 
                          
-                    </div> 
-                </div> 
-            </div> 
+                    
+                    
+  </div>
+ </div>
+                </div></div> 
             
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
                     <img class="card-img-top" src="" alt=""> 
-                    
-                    <div class="card-body "> 
+                    <div class="cardcontent">
+                    <div class="card-body"> 
 
                     
                     {% for member in doggie %}
-                   
+                   <div class="cardcontent">
                         <h5 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h5> 
                         <p class="card-text"> 
                            <p>{{ member.description }}</p>
                         </p> 
-                           
+                           <p>
                         <img class="img-responsive img-fluid" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
                    <p><a href="{{ member.url }}" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
-                        <a href="{{ member.url }}" class="btn btn-outline-primary btn-sm"> 
-                            Click Here For More Information
-                        </a></p>
-                    
+                      
+                        <button onclick="window.location.href='{{ member.url }}';" class="button" ><span>Enter</span></button>
+                        </p>
+                        
+                    </div>
                    {% endfor %}
-                    
+                    </div>
                     </div>
                 </div> 
             </div> 

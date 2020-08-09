@@ -46,9 +46,7 @@
   
                         <p><a href="contact" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
-                        <a href="contact" class="btn btn-outline-primary btn-sm"> 
-                            Click Here To Contact Us
-                        </a></p>
+                        <button onclick="window.location.href='{{ url_for('contact') }}';" class="button" ><span>Contact </span></button></p>
                     </div> 
     </div> 
             </div> 
@@ -64,13 +62,13 @@
                         <p class="card-text"> 
                            <p>{{ member.description }}</p>
                         </p> 
-                           
+                           <p>
                         <img class="img-responsive img-fluid" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
                    <p><a href="grooming" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
-                        <a href="{{ member.url }}" class="btn btn-outline-primary btn-sm"> 
-                            Click Here For More Information
-                        </a></p>
+                        
+                        <button onclick="window.location.href='{{ member.url }}';" class="button" ><span>Enter</span></button>
+                        </p>
                    {% endfor %}
                     </div> 
                 </div> 
