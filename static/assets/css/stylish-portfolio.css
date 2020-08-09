@@ -147,15 +147,15 @@ h6 {
   background-size: cover;
 }
 
-.puppyimage {
-
-  position: relative;
-  display: table;
-  width: 50%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.card-img-overlay{
+background: url("../img/dogbackground.jpg");
+  
 }
+
+ .card-body {
+background: url("../img/dogbackground.jpg");
+
+} 
 
 .masthead h1 {
   font-size: 4rem;
@@ -571,4 +571,39 @@ a:hover, a:focus, a:active {
     line-height: 30px;
     margin: 0;
     text-align: center;
+}
+
+
+.bg-image {
+  /* The image used */
+  background-image: url("../img/groom.jpg");
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
 }

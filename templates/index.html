@@ -11,9 +11,9 @@
         <div class="row"> 
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
-                    <img class="card-img-top" src="" alt=""> 
+                    <img class="card-img-top" src="../static/assets/img/puppy.jpg" alt=""> 
   
-                    <div class="card-body"> 
+                    <div class="card-img-overlay"> 
                         <h5 class="card-title">Welcome to Doggie DayCare</h5> 
                         <p class="card-text"> 
                             We are a one stop shop for all your Doggie needs.
@@ -34,23 +34,27 @@
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
                     <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                    {% for member in doggie %}
                     
+                    <div class="card-body "> 
+
+                    
+                    {% for member in doggie %}
+                   
                         <h5 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h5> 
                         <p class="card-text"> 
                            <p>{{ member.description }}</p>
                         </p> 
                            
                         <img class="img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
-                   <p><a href="grooming" class="btn btn-sm"> 
+                   <p><a href="{{ member.url }}" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
                         <a href="{{ member.url }}" class="btn btn-outline-primary btn-sm"> 
                             Click Here For More Information
                         </a></p>
+                    
                    {% endfor %}
-                    </div> 
+                    
+                    </div>
                 </div> 
             </div> 
             
@@ -61,6 +65,8 @@
   <div class="col-12"><h1><a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a></h1></div>
   
 </div>
+
+
 {% endblock %}
 
     
