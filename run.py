@@ -130,6 +130,12 @@ def overnight():
         data = json.load(json_data)
     return render_template("overnight.html", page_title="Doggie Sleepover", doggie=data)
 
+@app.route('/prices')
+def prices():
+    data = []
+    with open("data/doggie.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template("prices.html", page_title="Doggie Prices", doggie=data)
 
 
 if __name__ == '__main__':

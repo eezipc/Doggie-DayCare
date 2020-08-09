@@ -11,7 +11,11 @@
                     <img class="card-img-top" src="" alt=""> 
   
                     <div class="card-body"> 
-                        <h5 class="card-title">Book A Night Stay For Your Doggie</h5> 
+                        <h2 class="card-title">Book A Night Stay For Your Doggie</h2> 
+                        <p class="intro-text">We have a state of the art 5*Dog Hotel for our customers to avail of when it's time for them to go away on business or pleasure. 
+                        <br>Dogs play away in daycare and stay in our luxury on-site hotel at the end of the day. 
+                        <br>Dogs will be separated at night for their own safety, unless requested by customers with more than one dog.</p>
+                        <h3>Book a night stay for your doggie below</h3>
                         <form action="{{ url_for('insert_booking') }}" method="POST">
   <div action="" method="POST" class="form-group">
     <label for="email_address">Enter Your Email address</label>
@@ -20,7 +24,7 @@
   </div>
   <div class="form-group">
     <label for="petname">Enter Your Pets Name</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="petname" placeholder="Password">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="petname" placeholder="Enter Your Pets Name">
   </div>
   <div class="form-group">
     <label for="service">Enter The Service Your Pet Requires</label>

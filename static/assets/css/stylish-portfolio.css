@@ -147,6 +147,16 @@ h6 {
   background-size: cover;
 }
 
+.puppyimage {
+
+  position: relative;
+  display: table;
+  width: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .masthead h1 {
   font-size: 4rem;
   margin: 0;
@@ -554,4 +564,11 @@ a:hover, a:focus, a:active {
   .form-label-group input:-ms-input-placeholder {
     color: #777;
   }
+}
+
+.card .intro-text {
+    font-size: 17px;
+    line-height: 30px;
+    margin: 0;
+    text-align: center;
 }
