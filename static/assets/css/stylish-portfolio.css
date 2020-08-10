@@ -15,10 +15,10 @@ body {
   font-size: 1.5rem;
 }
 
-.btn-xl {
+/*.btn-xl {
   padding: 1.25rem 2.5rem;
 }
-
+*/
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
@@ -46,22 +46,8 @@ h6 {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Map */
-.map {
-  height: 30rem;
-}
 
-@media (max-width: 992px) {
-  .map {
-    height: 75%;
-  }
-}
-
-.map iframe {
-  pointer-events: none;
-}
-
-.scroll-to-top {
+/*.scroll-to-top {
   position: fixed;
   right: 15px;
   bottom: 15px;
@@ -85,13 +71,10 @@ h6 {
 .scroll-to-top i {
   font-weight: 800;
 }
-
+*/
 .navbarcss {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/dogbackgroundnav.jpg");
   
-  /* background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;  */
 }
 
 
@@ -195,7 +178,7 @@ padding: 0px;
   }
 }
 
-/* Side Menu */
+/* Side Menu
 #sidebar-wrapper {
   position: fixed;
   z-index: 2;
@@ -259,7 +242,7 @@ padding: 0px;
   width: 250px;
   transition: all 0.4s ease 0s;
 }
-
+ 
 .menu-toggle {
   position: fixed;
   right: 15px;
@@ -382,7 +365,7 @@ padding: 0px;
   width: 100%;
   border: 0;
 }
-
+*/
 footer.footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -422,6 +405,7 @@ a:hover, a:focus, a:active {
   color: #155d74;
 }
 
+/*
 .btn-primary {
   background-color: #1D809F !important;
   border-color: #1D809F !important;
@@ -452,7 +436,7 @@ a:hover, a:focus, a:active {
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
   font-weight: 700;
 }
-
+*/
 .bg-primary {
   background-color: #1D809F !important;
 }
@@ -568,15 +552,7 @@ a:hover, a:focus, a:active {
   color: #777;
 }
 
-.btn-google {
-  color: white;
-  background-color: #ea4335;
-}
 
-.btn-facebook {
-  color: white;
-  background-color: #3b5998;
-}
 
 /* Fallback for Edge
 -------------------------------------------------- */
@@ -644,3 +620,4 @@ a:hover, a:focus, a:active {
   padding: 20px;
   text-align: center;
 }
+
