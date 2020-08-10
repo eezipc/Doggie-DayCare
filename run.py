@@ -106,9 +106,9 @@ def register():
         existing_user = doggielogin.find_one({'email_address' : request.form['email_address']})
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            doggielogin.insert({'email_address' : request.form['email_address'],  'password' : hashpass, 'first_name' : request.form['first_name'], 'last_name' : request.form['last_name'], 'address' : request.form['address'], })
+            doggielogin.insert({'email_address' : request.form['email_address'],  'password' : hashpass, 'first_name' : request.form['first_name'], 'last_name' : request.form['last_name'], 'petname' : request.form['petname'], })
             session['email_address'] = request.form['email_address']
-            return redirect(url_for('login'))
+            return redirect(url_for('confirm'))
         
         return 'That username already exists!'
 
