@@ -19,7 +19,7 @@ def index():
     data = []
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("index.html", page_title="Home", doggie=data)
+    return render_template("index.html", page_title="Doggie Daycare", doggie=data)
 
 
 
