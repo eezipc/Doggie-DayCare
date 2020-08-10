@@ -12,6 +12,8 @@
                     <img class="card-img-top" src="" alt=""> 
   
                     <div class="card-body"> 
+                    <div class="cardbackground">
+                    <div class="cardcontent">
                         <h2 class="card-title">Book A Day Out For Your Doggie</h2> 
                         <p class="intro-text">Drop your dog off at Doggie Daycare safe in the knowledge that your dog will spend the day playing and socialising with lots of doggie friends. 
                        <br> A normal day is packed full of fun, where they will also learn vital skills such as bite inhibition, appropriate playing, build confidence and learn how to read other dogs’ body language to help communicate together. 
@@ -46,14 +48,17 @@
                     </div> 
                 </div> 
             </div> 
+                </div>
+            </div>
             
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
                     <img class="card-img-top" src="" alt=""> 
   
+                    
                     <div class="card-body"> 
                      {% for member in doggie %}
-                    
+                    <div class="cardcontent">
                         <h5 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h5> 
                         <p class="card-text"> 
                            <p>{{ member.description }}</p>
@@ -65,13 +70,15 @@
                         
                         <button onclick="window.location.href='{{ member.url }}';" class="button" ><span>Enter</span></button>
                         </p>
+                    </div>
                    {% endfor %}
                     </div> 
                 </div> 
             </div> 
-            
-        </div> 
-    </div> 
+            </div>
+        </div>
+        
+     
     
 {% endblock %}
     

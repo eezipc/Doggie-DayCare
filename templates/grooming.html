@@ -10,6 +10,8 @@
                     <img class="card-img-top" src="" alt=""> 
   
                     <div class="card-body"> 
+                     <div class="cardbackground">
+                    <div class="cardcontent"> 
                         <h2 class="card-title">Book A Grooming Session For Your Doggie</h2> 
                         <p class="card-text"> 
 <p class="intro-text">We believe in ‘quality over quantity’ when it comes to our grooming style. 
@@ -47,7 +49,10 @@
                         <p><a href="contact" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
                         <button onclick="window.location.href='{{ url_for('contact') }}';" class="button" ><span>Contact </span></button></p>
-                    </div> 
+</div> 
+</div>
+                    </div>
+
     </div> 
             </div> 
             
@@ -55,9 +60,10 @@
                 <div class="card"> 
                     <img class="card-img-top" src="" alt=""> 
   
-                    <div class="card-body"> 
-                     {% for member in doggie %}
                     
+                    <div class="card-body">
+                     {% for member in doggie %}
+                    <div class="cardcontent">
                         <h5 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h5> 
                         <p class="card-text"> 
                            <p>{{ member.description }}</p>
@@ -69,11 +75,14 @@
                         
                         <button onclick="window.location.href='{{ member.url }}';" class="button" ><span>Enter</span></button>
                         </p>
+                           </p>
+                        </div>
                    {% endfor %}
+                    </div>
                     </div> 
                 </div> 
             </div> 
             
         </div> 
-    </div> 
+    
 {% endblock %}
