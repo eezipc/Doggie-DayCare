@@ -3,20 +3,7 @@
 <div class="row">
   <div class="col-12"><h1>{{page_title}}</h1></div>
 </div>
-<!-- Doggie Image-->
-<div class="d-flex bd-highlight">
-  <div class="p-2 flex-fill bd-highlight font-weight-bold">
-    <div>
-      <a class="img-responsive img-fluid" href="{{ url_for('index') }}">
-        <img
-          style="height: 25%; width: 25%; object-fit: contain;"
-          src="{{ url_for('static', filename='../static/assets/img/labhead.jpg' ) }}"
-          alt="Doggie Daycare"
-        />
-      </a>
-    </div>
-  </div>
-</div>
+
 
 <!-- Information Submitted Section -->
 <div class="cardbackground">
@@ -38,4 +25,18 @@
   </div>
 </div>
 
+<!-- Doggie Image-->
+<div class="d-flex bd-highlight">
+  <div class="p-2 flex-fill bd-highlight font-weight-bold">
+    <div>
+      <a class="img-responsive img-fluid" href="{{ url_for('index') }}">
+        <img
+          style="height: 75%; width: 75%; object-fit: contain;"
+          src="{{ url_for('static', filename='../static/assets/img/awesome.jpg' ) }}"
+          alt="Doggie Daycare"
+        />
+      </a>
+    </div>
+  </div>
+</div>
 {% endblock %}
