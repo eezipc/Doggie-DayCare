@@ -405,7 +405,7 @@ footer.footer .social-link:hover {
 }
 
 a {
-  color: rgba(243, 240, 240, 0.568);
+  color: #ffffff;
 }
 
 .carouseltext {
@@ -471,6 +471,10 @@ a:hover, a:focus, a:active {
   --input-padding-y: .75rem;
 }
 
+.card-title {
+   font-size: 36px;
+    line-height: 40px;
+}
 
 
 .card-signin {

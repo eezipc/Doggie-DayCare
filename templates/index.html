@@ -1,26 +1,40 @@
 {% extends 'base.html' %}
 {% block home %}
 
-    
+    <!-- PAGE TITLE-->
     <div class="row">
     <div class="col-12"><h1>{{page_title}}</h1></div>
   
     </div>
+<!-- END PAGE TITLE-->
 
+<!-- lEFT CARD-->
 <div class="container"> 
         <div class="row"> 
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
-                    <img class="card-img-top" src="" alt=""> 
+                    <img class="card-img-top"> 
                     <div class="cardbackground">
                     <div class="cardcontent"> 
-                        <h2 class="card-title">Welcome to Doggie DayCare</h2> 
+                        <h2 class="card-title"><i class="fas fa-paw"> Welcome to Doggie DayCare </i></h2>
                         <p class="card-text"> 
-                            We are a one stop shop for all your Doggie needs.
-                            We provide grooming, daycare and overnight services.
-                            Click the links on the left for more info.
-                            If you would like to contact us, click the link below.
+                            <p>We are a one stop shop for all your Doggie needs.</p>
+                           <p>We provide grooming, daycare and overnight services.</p>
+                           <p> Click the links on the left for more info.</p>
+                           <p> If you would like to contact us, click the contact button below.</p>
                         </p> 
+                        <div>
+
+                        <div>
+                        <div class="d-flex flex-column bd-highlight mb-3">
+  <div class="p-2 bd-highlight"><h2>Services We Provide</h2></div>
+  <div class="p-2 bd-highlight"><a class="" href="daycare"><i class="fas fa-dog fa-5x"></i> Daycare</a></div>
+  <div class="p-2 bd-highlight"><a class="" href="overnight"><i class="fas fa-bed fa-5x"> </i> Sleepover</a></div>
+  <div class="p-2 bd-highlight"><a class="" href="grooming"><i class="fas fa-cut fa-5x"> </i> Grooming</a></div>
+</div>
+                        </div>
+                        
+                        </div>
                         <a href="contact" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
                         <button onclick="window.location.href='{{ url_for('contact') }}';" class="button" ><span>Contact </span></button> 
@@ -30,10 +44,13 @@
   </div>
  </div>
                 </div></div> 
-            
+
+<!-- END LEFT CARD-->
+
+<!-- RIGHT CARD-->
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
-                    <img class="card-img-top" src="" alt=""> 
+                    <img class="card-img-top"> 
                     
                     <div class="card-body"> 
 
@@ -61,6 +78,7 @@
             
         </div> 
     
+    <!-- END RIGHT CARD-->
 
 <!--<div class="row">
   <div class="col-12"><h1><a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a></h1></div>

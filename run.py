@@ -31,15 +31,6 @@ def about():
     return render_template("about.html", page_title="Doggie About")
 
 
-@app.route('/test')
-def test():
-    return render_template("test.html", doggiebook=mongo.db.doggiebook.find())
-    data = []
-    with open("data/doggie.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("test.html", page_title="Doggie About")
-
-
 
 @app.route('/contact', methods=['POST', 'GET'])
 def contact():

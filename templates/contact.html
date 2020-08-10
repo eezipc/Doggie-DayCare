@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="row">
+    <div class="col-12"><h1>{{page_title}}</h1></div>
+  </div>
 <div class="cardbackground">
                     <div class="cardcontent"> 
     <!--Section: Contact v.2-->
 <section class="mb-4">
 
-    <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">{{page_title}}</h2>
+
+   
     <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        a matter of hours to help you.</p>
+    <p class="text-center w-responsive mx-auto mb-5">
+    <p>Do you have any questions? </p>
+    <p>Please do not hesitate to contact us directly. </p>
+   
+        
 
     <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5">
+        <div class="col-md-9 mb-md-0 mb-5 p-5">
             <form id="myform" name="contact-form"  method="POST">
 
                 <!--Grid row-->
@@ -61,9 +67,11 @@
                 </div>
                 <!--Grid row-->
 <br><br>
-<button type="submit" class="btn btn-secondary center-block">
+<button type="submit" class="button">
 Contact Us
 </button>
+
+
             </form>
 
             
