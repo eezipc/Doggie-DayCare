@@ -1,105 +1,87 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+<!-- Page Title -->
 <div class="row">
-    <div class="col-12"><h1>{{page_title}}</h1></div>
-  </div>
-<div class="cardbackground">
-                    <div class="cardcontent"> 
-    <!--Section: Contact v.2-->
-<section class="mb-4">
-
-
-   
-    <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">
-    <p>Do you have any questions? </p>
-    <p>Please do not hesitate to contact us directly. </p>
-   
-        
-
-    <div class="row">
-
-        <!--Grid column-->
+  <div class="col-12"><h1>{{page_title}}</h1></div>
+</div>
+<!-- Contact Section -->
+<div class="cardbackground p-3">
+  <div class="cardcontent ">
+    <section class="mb-4">
+      <p class="text-center w-responsive mx-auto mb-5"></p>
+      <p>Do you have any questions?</p>
+      <p>Please do not hesitate to contact us directly.</p>
+      <div class="row">
         <div class="col-md-9 mb-md-0 mb-5 p-5">
-            <form id="myform" name="contact-form"  method="POST">
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                        <label for="name" class="">Please Type Your Name</label>
-                            <input type="text" id="from_name" name="from_name" class="form-control" placeholder="Name" required>
-                            
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                        <label for="email" class="">Please Type Your email</label>
-                            <input type="text" id="emailaddress" name="emailaddress" class="form-control" placeholder="Email Address" required>
-                            
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
+        <!-- Contact Form Section -->
+          <form id="myform" name="contact-form" method="POST">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <label for="name" class="">Please Type Your Name</label>
+                  <input
+                    type="text"
+                    id="from_name"
+                    name="from_name"
+                    class="form-control"
+                    placeholder="Name"
+                    required
+                  />
                 </div>
-                <!--Grid row-->
-
-                
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-<br><br>
-                        <div class="md-form">
-                        <label for="message">Please Type Your message</label>
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="Type Your Message" required></textarea>
-                            
-                        </div>
-
-                    </div>
+              </div>
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <label for="email" class="">Please Type Your email</label>
+                  <input
+                    type="text"
+                    id="emailaddress"
+                    name="emailaddress"
+                    class="form-control"
+                    placeholder="Email Address"
+                    required
+                  />
                 </div>
-                <!--Grid row-->
-<br><br>
-<button type="submit" class="button">
-Contact Us
-</button>
-
-
-            </form>
-
-            
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <br /><br />
+                <div class="md-form">
+                  <label for="message">Please Type Your message</label>
+                  <textarea
+                    type="text"
+                    id="message"
+                    name="message"
+                    rows="2"
+                    class="form-control md-textarea"
+                    placeholder="Type Your Message"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <br /><br />
+            <button type="submit" class="button">
+              Contact Us
+            </button>
+          </form>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
+        <!-- Address And Number Section -->
         <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Mayo, Ireland</p>
-                </li>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <i class="fas fa-map-marker-alt fa-2x"></i>
+              <p>Mayo, Ireland</p>
+            </li>
 
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
-                </li>
-
-                
-            </ul>
+            <li>
+              <i class="fas fa-phone mt-4 fa-2x"></i>
+              <p>+ 01 234 567 89</p>
+            </li>
+          </ul>
         </div>
-        <!--Grid column-->
-
-    </div>
-
-</section>
-<!--Section: Contact v.2-->
-                    </div>
+      </div>
+    </section>
+  </div>
 </div>
 
 {% endblock %}
-    

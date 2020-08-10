@@ -1,178 +1,236 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Doggie Day Care</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <style type="text/css">
+      div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+        z-index: 2222 !important;
+      }
+    </style>
 
-<head>
+    <!-- Bootstrap Core CSS -->
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
 
-  <title>Doggie Day Care</title>
+    <!-- Custom Fonts -->
+    <link
+      href="{{ url_for('static', filename='../static/assets/vendor/fontawesome-free/css/all.min.css' ) }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='../static/assets/vendor/simple-line-icons/css/simple-line-icons.css' ) }}"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link
+      href="{{ url_for('static', filename='../static/assets/css/stylish-portfolio.min.css' ) }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='../static/assets/css/stylish-portfolio.css' ) }}"
+      rel="stylesheet"
+    />
 
- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://kit.fontawesome.com/e6035afc3e.js" crossorigin="anonymous"></script>
 
-<style type="text/css">div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{z-index: 2222 !important;}</style>
-    
+    <!-- Email Contact Form Scripts -->
+    <script
+      type="text/javascript"
+      src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_l0VrxRy6jOgDnR1SV1KpH");
+      })();
+    </script>
+  </head>
 
-
-  <!-- Bootstrap Core CSS -->
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  
-  <!--<link href="{{ url_for('static', filename='../static/assets/vendor/bootstrap/css/bootstrap.min.css' ) }}" rel="stylesheet"> -->
-
-  <!-- Custom Fonts -->
-  <link href="{{ url_for('static', filename='../static/assets/vendor/fontawesome-free/css/all.min.css' ) }}" rel="stylesheet" type="text/css">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="{{ url_for('static', filename='../static/assets/vendor/simple-line-icons/css/simple-line-icons.css' ) }}" rel="stylesheet">
- <!-- Custom CSS -->
-  <link href="{{ url_for('static', filename='../static/assets/css/stylish-portfolio.min.css' ) }}" rel="stylesheet">
-  <link href="{{ url_for('static', filename='../static/assets/css/stylish-portfolio.css' ) }}" rel="stylesheet">
- 
- 
-   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("user_l0VrxRy6jOgDnR1SV1KpH");
-   })();
-</script>
- 
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation 
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a> -->
-
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg  navbarcss static-top text-dark">
-  <div class="container">
-    <a class="navbar-brand" href="{{ url_for('index') }}">
-          <img src="{{ url_for('static', filename='../static/assets/img/doglogo.png' ) }}" alt="Doggie Daycare">
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbarcss static-top text-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='../static/assets/img/doglogo.png' ) }}"
+            alt="Doggie Daycare"
+          />
         </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"><i class="fas fa-paw" style="color:#fff; font-size:28px;"></i></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"
+            ><i class="fas fa-paw" style="color: #fff; font-size: 28px;"></i
+          ></span>
         </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          
-          <button onclick="window.location.href='{{ url_for('index') }}';" class="button" ><span>Home </span></button>
-                <span class="sr-only">(current)</span>
-              </a>
-        </li>
-        <li class="nav-item">
-         
-          <button onclick="window.location.href='{{ url_for('about') }}';" class="button" ><span>About </span></button>
-        </li>
-        <li class="nav-item">
-          
-          <button onclick="window.location.href='{{ url_for('contact') }}';" class="button" ><span>Contact </span></button>
-        </li>
-        <li class="nav-item">
-          
-          <button onclick="window.location.href='{{ url_for('daycare') }}';" class="button" ><span>Daycare </span></button>
-        </li>
-        <li class="nav-item">
-          
-          <button onclick="window.location.href='{{ url_for('grooming') }}';" class="button" ><span>Grooming </span></button>
-        </li>
-        <li class="nav-item">
-                    <button onclick="window.location.href='{{ url_for('overnight') }}';" class="button" ><span>Overnight </span></button>
-        </li>
-        <li class="nav-item">
-                     <button onclick="window.location.href='{{ url_for('prices') }}';" class="button" ><span>Prices </span></button>
-        </li>
-        <li class="nav-item">
-                     <button onclick="window.location.href='{{ url_for('register') }}';" class="button" ><span>Register </span></button>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <button
+                onclick="window.location.href='{{ url_for('index') }}';"
+                class="button"
+              >
+                <span>Home </span>
+              </button>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('about') }}';"
+                class="button"
+              >
+                <span>About </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('contact') }}';"
+                class="button"
+              >
+                <span>Contact </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('daycare') }}';"
+                class="button"
+              >
+                <span>Daycare </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('grooming') }}';"
+                class="button"
+              >
+                <span>Grooming </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('overnight') }}';"
+                class="button"
+              >
+                <span>Overnight </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('prices') }}';"
+                class="button"
+              >
+                <span>Prices </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('register') }}';"
+                class="button"
+              >
+                <span>Register </span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- BODY -->
+    <div class="masthead d-flex">
+      <div class="container text-center">
+        {% block home %} {% endblock %} {% block content %} {% endblock %}
+      </div>
     </div>
-  </div>
-</nav>
 
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white mr-3"
+              href="{{ url_for('index') }}"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white mr-3"
+              href="{{ url_for('index') }}"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white"
+              href="{{ url_for('index') }}"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0">
+          Copyright &copy; Doggie DayCare 2020
+        </p>
+      </div>
+    </footer>
 
-  
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Header -->
-  <div class="masthead d-flex">
-  
-    <div class="container text-center ">
-    {% block home %}
-    {% endblock %}
-    {% block content %}
-    {% endblock %}
-
-      
-      
-    </div>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     
-  </div>
-
-  
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <ul class="list-inline mb-5">
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="{{ url_for('index') }}">
-            <i class="icon-social-facebook"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white mr-3" href="{{ url_for('index') }}">
-            <i class="icon-social-twitter"></i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="social-link rounded-circle text-white" href="{{ url_for('index') }}">
-            <i class="icon-social-github"></i>
-          </a>
-        </li>
-      </ul>
-      <p class="text-muted small mb-0">Copyright &copy; Doggie DayCare 2020</p>
-    </div>
-  </footer>
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Bootstrap core JavaScript -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename='../static/assets/js/stylish-portfolio.min.js' ) }}"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{ url_for('static', filename='../static/assets/vendor/jquery/jquery.min.js' ) }}"></script>
-  <script src="{{ url_for('static', filename='../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ) }}"></script>
+ <!-- Datepicker Script -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $("#datepicker").datepicker();
+    </script>
 
-  <!-- Plugin JavaScript -->
-  <script src="{{ url_for('static', filename='../static/assets/vendor/jquery-easing/jquery.easing.min.js' ) }}"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="{{ url_for('static', filename='../static/assets/js/stylish-portfolio.min.js' ) }}"></script>
-
-
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $('#datepicker').datepicker();
-  </script>
-
-<script src="{{ url_for('static', filename='../static/assets/js/sendEmail.js' ) }}"></script>
-
-
-</body>
-
+ <!-- Email Contact Form Script -->
+    <script src="{{ url_for('static', filename='../static/assets/js/sendEmail.js' ) }}"></script>
+  </body>
 </html>
-
-
-

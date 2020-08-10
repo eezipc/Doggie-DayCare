@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
+<!-- Title Section -->
 <div class="row">
     <div class="col-12"><h1>{{page_title}}</h1></div>
   </div>
+
+  <!-- Left Card Section -->
   <div class="container"> 
         <div class="row"> 
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
-                    <img class="card-img-top" src="" alt=""> 
+                    <img class="card-img-top"> 
   
                     <div class="card-body p-3"> 
                      <div class="cardbackground">
@@ -17,6 +20,7 @@
 <p class="intro-text">We believe in ‘quality over quantity’ when it comes to our grooming style. 
 <br>At our state of the art grooming pawlour, your precious furbaby will be treated to a pampering experience at the hands of our qualified professional groomers.</p>
                         <h3>Book a grooming session for your doggie below</h3>
+                        <!-- Booking Form Section -->
 <form action="{{ url_for('insert_booking') }}" method="POST">
   <div action="" method="POST" class="form-group">
     <label for="email_address">Enter Your Email address</label>
@@ -49,19 +53,22 @@
                         <p><a href="contact" class="btn btn-sm"> 
                             <i class="fas fa-paw"></i></a>
                         <button onclick="window.location.href='{{ url_for('contact') }}';" class="button" ><span>Contact </span></button></p>
+                        </p>
 </div> 
 </div>
                     </div>
 
     </div> 
-            </div> 
+            </div>  
             
+            <!-- Right Card Section -->
             <div class="col-lg-6 mb-4"> 
                 <div class="card"> 
-                    <img class="card-img-top" src="" alt=""> 
+                    <img class="card-img-top"> 
   
                     
                     <div class="card-body p-3">
+                    <!-- Beginning of Loop Section -->
                      {% for member in doggie %}
                     <div class="cardcontent">
                         <h2 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 

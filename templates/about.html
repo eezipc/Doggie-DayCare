@@ -1,111 +1,161 @@
-
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+ <!-- Page Title -->
 <div class="row">
-    <div class="col-12"><h1>{{page_title}}</h1></div>
-  </div>
+  <div class="col-12"><h1>{{page_title}}</h1></div>
+</div>
 
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
- <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+ <!-- Carousel -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to="0"
+      class="active"
+    ></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-     <a  href="daycare"> <img class="d-block w-100" src="../static/assets/img/dogtoycar.jpg" alt="First slide"></a>
-       <div class="carousel-caption d-none d-md-block">
-       <div class="scrim">
-    <h5><a class="carouseltext" href="daycare"><i class="fas fa-paw"></i> Doggie Daycare</a></h5>
-    <p><a class="carouseltext" href="daycare">Click Here To Book A Doggie Daycare</a></p>
-    </div>
-       </div>
+      <a href="daycare">
+        <img
+          class="d-block w-100"
+          src="../static/assets/img/dogtoycar.jpg"
+          alt="First slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="daycare"
+              ><i class="fas fa-paw"></i> Doggie Daycare</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="daycare"
+              >Click Here To Book A Doggie Daycare</a
+            >
+          </p>
+        </div>
+      </div>
     </div>
     <div class="carousel-item">
-      <a class="" href="grooming"><img class="d-block w-100" src="../static/assets/img/doggroomcar.jpg" alt="Second slide"></a>
-       <div class="carousel-caption d-none d-md-block">
-       <div class="scrim">
-    <h5><a class="carouseltext" href="grooming"><i class="fas fa-paw"></i> Doggie Grooming</a></h5>
-    <p><a class="carouseltext" href="grooming">Click Here To Book A Doggie Groom</a></p>
-    </div>
-       </div>
+      <a class="" href="grooming"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/doggroomcar.jpg"
+          alt="Second slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="grooming"
+              ><i class="fas fa-paw"></i> Doggie Grooming</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="grooming"
+              >Click Here To Book A Doggie Groom</a
+            >
+          </p>
+        </div>
+      </div>
     </div>
     <div class="carousel-item">
-      <a class="" href="overnight"><img class="d-block w-100" src="../static/assets/img/dogsleep2car.jpg" alt="Third slide"></a>
-       <div class="carousel-caption d-none d-md-block">
-       <div class="scrim">
-    <h5><a class="carouseltext" href="overnight"><i class="fas fa-paw"></i> Doggie Sleepover</a></h5>
-    <p><a class="carouseltext" href="overnight">Click Here To Book A Doggie Sleepover</a></p>
-    </div>
-       </div>
+      <a class="" href="overnight"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/dogsleep2car.jpg"
+          alt="Third slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="overnight"
+              ><i class="fas fa-paw"></i> Doggie Sleepover</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="overnight"
+              >Click Here To Book A Doggie Sleepover</a
+            >
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only carouseltext">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only carouseltext">Next</span>
   </a>
 </div>
 
+ <!-- About Section -->
 <div class="cardbackground">
-                    <div class="cardcontent"> 
-
+  <div class="cardcontent">
     <div class="aboutus-section">
-    
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="aboutus">
-                        <h2 class="">{{page_title}}</h2>
-                        <p class="">We are the best doggie daycare facility in the world.</p>
-                        <p class="">If you don't believe us, then you must try us</p>
-                        
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    
-                </div>
-                <div class="col-md-5 col-sm-6 col-xs-12">
-                    <div class="feature">
-                        <div class="feature-box">
-                            <div class="clearfix">
-                                <div class="feature-content">
-                                    <h4>Who Are We?</h4>
-                                    <p>We are the best dog daycare facility in the world</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature-box">
-                            <div class="clearfix">
-                                <div class="iconset">
-                                    <span class="glyphicon glyphicon-cog icon"></span>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>Reliable services</h4>
-                                    <p>We provide the best service in the world</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature-box">
-                            <div class="clearfix">
-                                <div class="iconset">
-                                    <span class="glyphicon glyphicon-cog icon"></span>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>Great support</h4>
-                                    <p>We provide the best support to both humans and dogs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="aboutus">
+              <h2 class="">{{page_title}}</h2>
+              <p class="">
+                We are the best doggie daycare facility in the world.
+              </p>
+              <p class="">If you don't believe us, then you must try us</p>
             </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12"></div>
+          <div class="col-md-5 col-sm-6 col-xs-12">
+            <div class="feature">
+              <div class="feature-box">
+                <div class="clearfix">
+                  <div class="feature-content">
+                    <h4>Who Are We?</h4>
+                    <p>We are the best dog daycare facility in the world</p>
+                  </div>
+                </div>
+              </div>
+              <div class="feature-box">
+                <div class="clearfix">
+                  <div class="iconset">
+                    <span class="glyphicon glyphicon-cog icon"></span>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Reliable services</h4>
+                    <p>We provide the best service in the world</p>
+                  </div>
+                </div>
+              </div>
+              <div class="feature-box">
+                <div class="clearfix">
+                  <div class="iconset">
+                    <span class="glyphicon glyphicon-cog icon"></span>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Great support</h4>
+                    <p>We provide the best support to both humans and dogs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-                    </div>
+  </div>
 </div>
 {% endblock %}
-

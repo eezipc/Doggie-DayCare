@@ -1,428 +1,466 @@
-
-{% extends 'base.html' %}
-{% block content %}
-
+{% extends 'base.html' %} {% block content %}
+<!-- Title Section -->
 
 <div class="container">
-<div class="d-flex bd-highlight">
-  <div class="p-2 flex-fill bd-highlight"><h1>{{page_title}}</h1></div>
+  <div class="d-flex bd-highlight">
+    <div class="p-2 flex-fill bd-highlight"><h1>{{page_title}}</h1></div>
+  </div>
 </div>
-</div>
-    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
- <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+<!-- Carousel Section -->
+<div
+  id="carouselExampleControls"
+  class="carousel slide carousel-fade"
+  data-ride="carousel"
+>
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to="0"
+      class="active"
+    ></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-     <a  href="daycare"> <img class="d-block w-100" src="../static/assets/img/dogtoycar.jpg" alt="First slide"></a>
-       <div class="carousel-caption d-none d-md-block">
+      <a href="daycare">
+        <img
+          class="d-block w-100"
+          src="../static/assets/img/dogtoycar.jpg"
+          alt="First slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="p-2 flex-fill bd-highlight">
+          <div class="scrim">
+            <div class="container">
+              <div class="p-2 flex-fill bd-highlight font-weight-bold">
+                <div><i class="fas fa-dog"></i></div>
+                <div><a href="daycare"> DOGGIE DAYCARE</a></div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  One Day
+                </div>
+                <div class="col-sm">
+                  €15
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  2nd Dog
+                </div>
+                <div class="col-sm">
+                  €10
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  One Week Rate
+                </div>
+                <div class="col-sm">
+                  €40
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  2nd Dog
+                </div>
+                <div class="col-sm">
+                  €30
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  Two Week Rate
+                </div>
+                <div class="col-sm">
+                  €70
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-<div class="p-2 flex-fill bd-highlight">
-  <div class="scrim">
-  <div class="container ">
-  <div class="p-2 flex-fill bd-highlight font-weight-bold">
-  <div><i class="fas fa-dog"></i></div>
-  <div><a href="daycare">  DOGGIE DAYCARE</a> </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      One Day
-    </div>
-    <div class="col-sm">
-      €15
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      2nd Dog
-    </div>
-    <div class="col-sm">
-      €10
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      One Week Rate
-    </div>
-    <div class="col-sm">
-      €40
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      2nd Dog 
-    </div>
-    <div class="col-sm">
-      €30
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Two Week Rate
-    </div>
-    <div class="col-sm">
-      €70
-    </div>
-  </div>
-</div>
-  </div>
-  
-</div>
-
-  <div class="scrim">
-    <h5><a class="carouseltext" href="daycare"><i class="fas fa-paw"></i> Doggie Daycare</a></h5>
-    <p><a class="carouseltext" href="daycare">Click Here To Book A Doggie Daycare</a></p>
-    </div>
-
-
-    </div>
-    <div class="d-xl-none d-lg-none d-md-none">
-    <p><a href="#mobiledaycare">Click Here To View Doggie Daycare Prices</a></p>
-    </div>
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="daycare"
+              ><i class="fas fa-paw"></i> Doggie Daycare</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="daycare"
+              >Click Here To Book A Doggie Daycare</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="d-xl-none d-lg-none d-md-none">
+        <p>
+          <a href="#mobiledaycare">Click Here To View Doggie Daycare Prices</a>
+        </p>
+      </div>
     </div>
     <div class="carousel-item">
-      <a class="" href="grooming"><img class="d-block w-100" src="../static/assets/img/doggroomcar.jpg" alt="Second slide"></a>
-       <div class="carousel-caption d-none d-md-block">
+      <a class="" href="grooming"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/doggroomcar.jpg"
+          alt="Second slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="p-2 flex-fill bd-highlight">
+          <div class="scrim">
+            <div class="container">
+              <div class="p-2 flex-fill bd-highlight font-weight-bold">
+                <div><i class="fas fa-cut"></i></div>
+                <div><a href="grooming"> DOGGIE GROOMING</a></div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  Full Groom
+                </div>
+                <div class="col-sm">
+                  €40 - €70
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  Wash & Dry
+                </div>
+                <div class="col-sm">
+                  €20 - €60
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  Nails & Ears
+                </div>
+                <div class="col-sm">
+                  €10
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  DeShedding
+                </div>
+                <div class="col-sm">
+                  €40 - €90
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  Worming & Flea Treatment
+                </div>
+                <div class="col-sm">
+                  €20 - €40
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-<div class="p-2 flex-fill bd-highlight">
-<div class="scrim">
-  <div class="container">
-  <div class="p-2 flex-fill bd-highlight font-weight-bold">
-  <div><i class="fas fa-cut"></i></div>
-  <div><a href="grooming">  DOGGIE GROOMING</a> </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Full Groom
-    </div>
-    <div class="col-sm">
-      €40 - €70
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Wash & Dry
-    </div>
-    <div class="col-sm">
-      €20 - €60
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Nails & Ears
-    </div>
-    <div class="col-sm">
-      €10
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      DeShedding
-    </div>
-    <div class="col-sm">
-      €40 - €90
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Worming & Flea Treatment
-    </div>
-    <div class="col-sm">
-      €20 - €40
-  </div>
-  </div>
-</div>
-  
-  </div>
-</div>
-
-<div class="scrim">
-    <h5><a class="carouseltext" href="grooming"><i class="fas fa-paw"></i> Doggie Grooming</a></h5>
-    <p><a class="carouseltext" href="grooming">Click Here To Book A Doggie Groom</a></p>
-</div>
-    </div>
-    <div class="d-xl-none d-lg-none d-md-none">
-    <p><a href="#mobilegrooming">Click Here To View Doggie Groom Prices</a></p>
-    </div>
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="grooming"
+              ><i class="fas fa-paw"></i> Doggie Grooming</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="grooming"
+              >Click Here To Book A Doggie Groom</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="d-xl-none d-lg-none d-md-none">
+        <p>
+          <a href="#mobilegrooming">Click Here To View Doggie Groom Prices</a>
+        </p>
+      </div>
     </div>
     <div class="carousel-item">
-      <a class="" href="overnight"><img class="d-block w-100" src="../static/assets/img/dogsleep2car.jpg" alt="Third slide"></a>
-       <div class="carousel-caption d-none d-md-block">
+      <a class="" href="overnight"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/dogsleep2car.jpg"
+          alt="Third slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="d-flex bd-highlight">
+          <div class="p-3 flex-fill bd-highlight">
+            <div class="scrim">
+              <div class="container">
+                <div class="p-2 flex-fill bd-highlight font-weight-bold">
+                  <div><i class="fas fa-suitcase"></i></div>
 
+                  <div><a href="overnight"> DOGGIE SLEEPOVER</a></div>
+                </div>
 
-<div class="d-flex bd-highlight ">
-  <div class="p-3 flex-fill bd-highlight">
-  <div class="scrim">
-  <div class="container ">
-  <div class="p-2 flex-fill bd-highlight font-weight-bold">
-  <div><i class="fas fa-suitcase"></i></div>
+                <div class="row">
+                  <div class="col-sm">
+                    One Night
+                  </div>
+                  <div class="col-sm">
+                    €20
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    2nd Dog
+                  </div>
+                  <div class="col-sm">
+                    €15
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    3rd Dog
+                  </div>
+                  <div class="col-sm">
+                    €10
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    One Week
+                  </div>
+                  <div class="col-sm">
+                    €140
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm">
+                    Two Weeks
+                  </div>
+                  <div class="col-sm">
+                    €260
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div><a href="overnight">  DOGGIE SLEEPOVER</a>
-    </div>
-  
-  </div>
-  
-  <div class="row">
-    <div class="col-sm">
-      One Night
-    </div>
-    <div class="col-sm">
-      €20
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      2nd Dog
-    </div>
-    <div class="col-sm">
-      €15
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      3rd Dog
-    </div>
-    <div class="col-sm">
-      €10
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="overnight"
+              ><i class="fas fa-paw"></i> Doggie Sleepover</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="overnight"
+              >Click Here To Book A Doggie Sleepover</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="d-xl-none d-lg-none d-md-none">
+        <p>
+          <a href="#mobilesleepover"
+            >Click Here To View Doggie Overnight Prices</a
+          >
+        </p>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm">
-      One Week
-    </div>
-    <div class="col-sm">
-      €140
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Two Weeks
-    </div>
-    <div class="col-sm">
-      €260
-    </div>
-  </div>
-</div>
-  </div>
-  </div>
-</div>
-
-<div class="scrim">
-    <h5><a class="carouseltext" href="overnight"><i class="fas fa-paw"></i> Doggie Sleepover</a></h5>
-    <p><a class="carouseltext" href="overnight">Click Here To Book A Doggie Sleepover</a></p>
-</div>
-    </div>
-    <div class="d-xl-none d-lg-none d-md-none ">
-    <p><a href="#mobilesleepover">Click Here To View Doggie Overnight Prices</a></p>
-    </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
 
-<!--TESTING LAYOUT-->
+<!--Prices Section For Small Screens-->
 
 <div class="cardbackground">
-<div class="cardcontent"> 
-<div class="container pricesbackground d-xl-none d-lg-none d-md-none ">
-<div class="d-flex bd-highlight">
-  <div class="p-2 flex-fill bd-highlight"><h1>{{page_title}}</h1></div>
-</div>
+  <div class="cardcontent">
+    <div class="container pricesbackground d-xl-none d-lg-none d-md-none">
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight"><h1>{{page_title}}</h1></div>
+      </div>
 
-<div class="d-flex bd-highlight">
-  <div class="p-2 flex-fill bd-highlight font-weight-bold">
-  <div><i class="fas fa-suitcase"></i></div>
-  <div><a name="mobilesleepover" href="overnight">  DOGGIE SLEEPOVER</a></div>
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight font-weight-bold">
+          <div><i class="fas fa-suitcase"></i></div>
+          <div>
+            <a name="mobilesleepover" href="overnight"> DOGGIE SLEEPOVER</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex bd-highlight">
+        <div class="p-3 flex-fill bd-highlight">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                One Night
+              </div>
+              <div class="col-sm">
+                €20
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                2nd Dog
+              </div>
+              <div class="col-sm">
+                €15
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                3rd Dog
+              </div>
+              <div class="col-sm">
+                €10
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                One Week
+              </div>
+              <div class="col-sm">
+                €140
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                Two Weeks
+              </div>
+              <div class="col-sm">
+                €260
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight font-weight-bold">
+          <div><i class="fas fa-dog"></i></div>
+          <div><a name="mobiledaycare" href="daycare"> DOGGIE DAYCARE</a></div>
+        </div>
+      </div>
+
+      <div class="d-flex bd-highlight">
+        <div class="p-3 flex-fill bd-highlight">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                One Day
+              </div>
+              <div class="col-sm">
+                €15
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                2nd Dog
+              </div>
+              <div class="col-sm">
+                €10
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                One Week Rate
+              </div>
+              <div class="col-sm">
+                €40
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                2nd Dog
+              </div>
+              <div class="col-sm">
+                €30
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                Two Week Rate
+              </div>
+              <div class="col-sm">
+                €70
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight font-weight-bold">
+          <div><i class="fas fa-cut"></i></div>
+          <div>
+            <a name="mobilegrooming" href="grooming"> DOGGIE GROOMING</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex bd-highlight">
+        <div class="p-3 flex-fill bd-highlight">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                Full Groom
+              </div>
+              <div class="col-sm">
+                €40 - €70
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                Wash & Dry
+              </div>
+              <div class="col-sm">
+                €20 - €60
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                Nails & Ears
+              </div>
+              <div class="col-sm">
+                €10
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                DeShedding
+              </div>
+              <div class="col-sm">
+                €40 - €90
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                Worming & Flea Treatment
+              </div>
+              <div class="col-sm">
+                €20 - €40
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<div class="d-flex bd-highlight ">
-  <div class="p-3 flex-fill bd-highlight">
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One Night
-    </div>
-    <div class="col-sm">
-      €20
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      2nd Dog
-    </div>
-    <div class="col-sm">
-      €15
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      3rd Dog
-    </div>
-    <div class="col-sm">
-      €10
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      One Week
-    </div>
-    <div class="col-sm">
-      €140
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Two Weeks
-    </div>
-    <div class="col-sm">
-      €260
-    </div>
-  </div>
-</div>
-  </div>
-</div>
 
-
-<div class="d-flex bd-highlight">
-  <div class="p-2 flex-fill bd-highlight font-weight-bold">
-  <div><i class="fas fa-dog"></i></div>
-  <div><a name="mobiledaycare" href="daycare">  DOGGIE DAYCARE</a></div>
-  </div>
-</div>
-
-
-<div class="d-flex bd-highlight">
-  <div class="p-3 flex-fill bd-highlight">
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One Day
-    </div>
-    <div class="col-sm">
-      €15
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      2nd Dog
-    </div>
-    <div class="col-sm">
-      €10
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      One Week Rate
-    </div>
-    <div class="col-sm">
-      €40
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      2nd Dog 
-    </div>
-    <div class="col-sm">
-      €30
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Two Week Rate
-    </div>
-    <div class="col-sm">
-      €70
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
-
-<div class="d-flex bd-highlight">
-  <div class="p-2 flex-fill bd-highlight font-weight-bold">
-  <div><i class="fas fa-cut"></i></div>
-  <div><a name="mobilegrooming" href="grooming">  DOGGIE GROOMING</a></div>
-  </div>
-</div>
-
-
-
-<div class="d-flex bd-highlight">
-  <div class="p-3 flex-fill bd-highlight">
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      Full Groom
-    </div>
-    <div class="col-sm">
-      €40 - €70
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Wash & Dry
-    </div>
-    <div class="col-sm">
-      €20 - €60
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Nails & Ears
-    </div>
-    <div class="col-sm">
-      €10
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      DeShedding
-    </div>
-    <div class="col-sm">
-      €40 - €90
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      Worming & Flea Treatment
-    </div>
-    <div class="col-sm">
-      €20 - €40
-    </div>
-  </div>
-
-  </div>
-  </div>
-  </div>
-</div>
-</div>
-
-
-
-
-
-</div>
-
-
-
-<!--END TESTING LAYOUT-->
-
-
-
-    
 {% endblock %}
-

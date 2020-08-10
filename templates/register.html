@@ -1,76 +1,91 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+<!-- Title Section -->
 <div class="row">
-    <div class="col-12"><h1>{{page_title}}</h1></div>
-  </div>
-<div class="cardbackground">
-                    <div class="cardcontent"> 
-    <!--Section: Contact v.2-->
-<section class="mb-4">
-
-
-   
-    <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">
-    <p>Would You Like To Register For Our Newsletter </p>
-    <p>Please Fill Out The Form Below. </p>
-   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        
-
-    <div class="row">
-
-        <!--Grid column-->
+  <div class="col-12"><h1>{{page_title}}</h1></div>
+</div>
+<!-- Left Card Section -->
+<div class="cardbackground p-3">
+  <div class="cardcontent">
+    <section class="mb-4">
+      <p class="text-center w-responsive mx-auto mb-5"></p>
+      <p>Would You Like To Register For Our Newsletter</p>
+      <p>Please Fill Out The Form Below.</p>
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+      <div class="row">
         <div class="col-md-9 mb-md-0 mb-5 p-5">
-            <form method=POST action="{{ url_for('register') }}">
-                <div class="form-group">
-                    <label for="email_address">Enter Your Email Address</label>
-                    <input type="text" class="form-control" name="email_address" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Create A Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="first_name">Enter Your First Name</label>
-                    <input type="text" class="form-control" name="first_name" placeholder="First Name">
-                </div>
-                <div class="form-group">
-                    <label for="last_name">Enter Your Surname</label>
-                    <input type="text" class="form-control" name="last_name" placeholder="Surname">
-                </div>
-                <div class="form-group">
-                    <label for="petname">Enter Your Pet's Name</label>
-                    <input type="text" class="form-control" name="petname" placeholder="Pet Name">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
-            </form>
-
-            
+        <!-- Register Form Section -->
+          <form method="POST" action="{{ url_for('register') }}">
+            <div class="form-group">
+              <label for="email_address">Enter Your Email Address</label>
+              <input
+                type="text"
+                class="form-control"
+                name="email_address"
+                placeholder="Username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Create A Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
+            <div class="form-group">
+              <label for="first_name">Enter Your First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="first_name"
+                placeholder="First Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="last_name">Enter Your Surname</label>
+              <input
+                type="text"
+                class="form-control"
+                name="last_name"
+                placeholder="Surname"
+              />
+            </div>
+            <div class="form-group">
+              <label for="petname">Enter Your Pet's Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="petname"
+                placeholder="Pet Name"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Register
+            </button>
+          </form>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
+<!-- Address and Number Section -->
         <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Mayo, Ireland</p>
-                </li>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <i class="fas fa-map-marker-alt fa-2x"></i>
+              <p>Mayo, Ireland</p>
+            </li>
 
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
-                </li>
-
-                
-            </ul>
+            <li>
+              <i class="fas fa-phone mt-4 fa-2x"></i>
+              <p>+ 01 234 567 89</p>
+            </li>
+          </ul>
         </div>
-        <!--Grid column-->
 
-    </div>
-
-</section>
-<!--Section: Contact v.2-->
-                    </div>
+      </div>
+    </section>
+  
+  </div>
 </div>
 
 {% endblock %}
-    
