@@ -64,31 +64,6 @@ def confirm():
         data = json.load(json_data)
     return render_template("confirm.html", page_title="Doggie Confirmation", doggie=data)
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
-    data = []
-    with open("data/doggie.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("login.html", page_title="Doggie Login", doggie=data)
-
-
-
-@app.route('/loginpage', methods=['POST', 'GET'])
-def loginpage():
-    if 'email_address' in session:
-        return 'You are logged in as ' + session['email_address']
-
-    return render_template('loginpage.html')
-    doggielogin = mongo.db.doggielogin
-    login_user = doggielogin.find_one({'email_address': request.form['email_address']})
-
-    if login_user:
-        if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
-            session['email_address'] = request.form['email_address']
-            return redirect(url_for('loginpage'))
-
-    return 'Invalid username or password'
-
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
@@ -104,7 +79,6 @@ def register():
             doggielogin.insert({'email_address' : request.form['email_address'],  'password' : hashpass, 'first_name' : request.form['first_name'], 'last_name' : request.form['last_name'], 'petname' : request.form['petname'], })
             session['email_address'] = request.form['email_address']
             return redirect(url_for('confirm'))
-        
         return 'That username already exists!'
 
     return render_template("register.html", page_title="Doggie Register", doggie=data)
@@ -128,13 +102,30 @@ def viewbooking():
     return render_template('viewbooking.html',
                            doggiebook=mongo.db.doggiebook.find())
 
-@app.route('/editbooking/<doggiebook_id>')
-def editbooking(doggiebook_id):
-    edit_booking =  mongo.db.doggiebook.find_one({"_id": ObjectId(doggiebook_id)})
+@app.route('/edit_booking/<task_id>', methods=['POST', 'GET'])
+def edit_booking(task_id):
+    the_task =  mongo.db.doggiebook.find_one({"_id": ObjectId(task_id)})
     edit_login =  mongo.db.doggielogin.find()
     edit_pets = mongo.db.doggiepets.find()
-    return render_template('editbooking.html', booking=edit_booking, login=edit_login, pets=edit_pets)
+    return render_template('editbooking.html', task=the_task, login=edit_login, pets=edit_pets)
 
+
+@app.route('/update_booking/<task_id>', methods=["POST"])
+def update_booking(task_id):
+    tasks = mongo.db.doggiebook
+    tasks.update( {'_id': ObjectId(task_id)},
+    {
+        'email_address':request.form.get('email_address'),
+        'petname':request.form.get('petname'),
+        'service': request.form.get('service'),
+        'date': request.form.get('date')
+    })
+    return redirect(url_for('viewbooking'))
+
+@app.route('/delete_booking/<task_id>')
+def delete_booking(task_id):
+    mongo.db.doggiebook.remove({'_id': ObjectId(task_id)})
+    return redirect(url_for('viewbooking'))
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

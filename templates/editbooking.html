@@ -20,27 +20,27 @@
                         <br> No more bored, home alone dogs.</p>
                         <h3>Book a day out for your doggie below</h3>
                         <!-- Booking Form -->
-                        <form action="{{ url_for('editbooking', doggiebook_id=doggiebook._id) }}" method="POST" >
+                        <form action="{{ url_for('update_booking', task_id=task._id) }}" method="POST" >
   <div class="form-group">
-    <label for="email_address">Enter Your Email address</label>
-    <input type="email" class="form-control" name= "email_address" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <label for="email_address">Email address</label>
+    <input type="email" class="form-control" name= "email_address" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{task.email_address}}" >
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
-    <label for="petname">Enter Your Pets Name</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="petname" placeholder="Pet Name">
+    <label for="petname">Pet Name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="petname" value="{{task.petname}}">
   </div>
   <div class="form-group">
-    <label for="service">Enter The Service Your Pet Requires</label>
-    <input type="text" class="form-control" id="service" name="service" placeholder="Service Required">
+    <label for="service">Service Your Pet Requires</label>
+    <input type="text" class="form-control" id="service" name="service" value="{{task.service}}">
   </div>
 
 <div class="form-group">
-    <label for="date">Choose Your Date</label>
-    <input type="text" class="form-control" id="datepicker"  name="date" placeholder="Choose Your Date">
+    <label for="date">Date</label>
+    <input type="text" class="form-control" id="datepicker"  name="date" value="{{task.date}}">
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit Your Booking</button>
+  <button type="submit" class="btn btn-primary">Edit Booking</button>
 </form> <br>
   
                         <p><a href="contact" class="btn btn-sm"> 
