@@ -21,16 +21,12 @@ def index():
         data = json.load(json_data)
     return render_template("index.html", page_title="Doggie Daycare", doggie=data)
 
-
-
 @app.route('/about')
 def about():
     data = []
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("about.html", page_title="Doggie About")
-
-
 
 @app.route('/contact', methods=['POST', 'GET'])
 def contact():
@@ -44,8 +40,7 @@ def daycare():
     data = []
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("daycare.html", page_title="Doggie Daycare", doggie=data)
-    
+    return render_template("daycare.html", page_title="Doggie Daycare", doggie=data) 
 
 @app.route('/grooming', methods=['POST', 'GET'])
 def grooming():
@@ -127,6 +122,18 @@ def prices():
     with open("data/doggie.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("prices.html", page_title="Doggie Prices", doggie=data)
+
+@app.route('/viewbooking')
+def viewbooking():
+    return render_template('viewbooking.html',
+                           doggiebook=mongo.db.doggiebook.find())
+
+@app.route('/editbooking/<doggiebook_id>')
+def editbooking(doggiebook_id):
+    edit_booking =  mongo.db.doggiebook.find_one({"_id": ObjectId(doggiebook_id)})
+    edit_login =  mongo.db.doggielogin.find()
+    edit_pets = mongo.db.doggiepets.find()
+    return render_template('editbooking.html', booking=edit_booking, login=edit_login, pets=edit_pets)
 
 
 if __name__ == '__main__':

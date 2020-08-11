@@ -1,0 +1,161 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Page Title -->
+<div class="row">
+  <div class="col-12"><h1>{{page_title}}</h1></div>
+</div>
+
+
+<!-- Information Submitted Section -->
+<div class="cardbackground">
+  <div class="cardcontent">
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight font-weight-bold">
+        <div>
+        
+{% for doggiebook in doggiebook %}
+        
+
+
+        
+					
+
+
+
+
+
+<div class="row ">
+							<div class="col-lg-1 mx-auto table-responsive-md">
+								<table class="table table-hover ">
+									<thead>
+										<tr>
+											<th>
+												<div> Email Address</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<section class="location">
+    <div class="city">{{doggiebook.email_address}}</div>
+    </section>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							
+
+							<div class="col-lg-1 mx-auto table-responsive-md">
+								<table class="table table-hover ">
+									<thead>
+										<tr>
+											<th>
+												<div> Pet </div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<div class="forecast">
+                <div class="day2">{{doggiebook.petname}}</div>
+                </div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+
+
+							<div class="col-lg-1 mx-auto table-responsive-md">
+								<table class="table table-hover ">
+									<thead>
+										<tr>
+											<th>
+												<div> Date</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<div class="forecast">
+                <div class="day3">{{doggiebook.date}}</div>
+                </div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+							<div class="col-lg-1 mx-auto table-responsive-md">
+								<table class="table table-hover ">
+									<thead>
+										<tr>
+											<th>
+												<div> Service</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>
+												<div class="forecast">
+                <div class="day4">{{doggiebook.service}}</div>
+                </div>
+											</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+                            
+
+
+						</div>
+
+  
+        
+        
+        {% endfor %}
+
+
+        
+        
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex bd-highlight">
+      <div class="p-2 flex-fill bd-highlight font-weight-bold">
+        <div><i class="fas fa-suitcase"></i></div>
+        <div>
+          <a href="{{ url_for('index') }}"> Click Here To Return Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Doggie Image-->
+<div class="d-flex bd-highlight">
+  <div class="p-2 flex-fill bd-highlight font-weight-bold">
+    <div>
+      <a class="img-responsive img-fluid" href="{{ url_for('index') }}">
+        <img
+          style="height: 75%; width: 75%; object-fit: contain;"
+          src="{{ url_for('static', filename='../static/assets/img/awesome.jpg' ) }}"
+          alt="Doggie Daycare"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
