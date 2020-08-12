@@ -64,7 +64,20 @@ def confirm():
         data = json.load(json_data)
     return render_template("confirm.html", page_title="Doggie Confirmation", doggie=data)
 
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    if request.method == "POST":
+        existing_user = mongo.db.doggielogin.find_one(
+            {"email_address": request.form.get("email_address").lower()})
 
+        if existing_user:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+                session['email_address'] = request.form['email_address']
+                return redirect(url_for('index'))
+
+    return 'Invalid username/password combination'
+    
+    
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     data = []
