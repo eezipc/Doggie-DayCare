@@ -14,7 +14,13 @@
       <div class="row">
         <div class="col-md-9 mb-md-0 mb-5 p-5">
         <!-- Register Form Section -->
-          
+          {% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+{% endif %}
+{% endwith %}
 <form class="form-signin" action="{{ url_for('login') }}" method="POST">
               <div class="form-label-group">
                 <input type="email" id="email_address" class="form-control" name="email_address" placeholder="Email address" required >

@@ -3,7 +3,7 @@ import json
 from flask import Flask, render_template, redirect, request, url_for, session, flash, Markup
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-import bcrypt
+#import bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -76,7 +76,7 @@ def register():
             {"email_address": request.form.get("email_address").lower()})
 
         if existing_user:
-            flash("Username already taken")
+            flash("Email Address is already registered")
             return redirect(url_for("register"))
 
         register = {
@@ -90,7 +90,7 @@ def register():
 
          # put the user in session cookie
         session["user"] = request.form.get("email_address").lower()
-        flash("Registration sucessfull")
+        flash("Your Account Has Been Registered")
         return redirect(url_for("profile", email_address=session["user"]))
     return render_template("register.html", page_title="Doggie Register")
 
@@ -108,18 +108,18 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("email_address").lower()
-                flash("Nice to see you again, {}!".format(
+                flash("Welcome Back, {}!".format(
                         request.form.get("email_address")))
                 return redirect(url_for(
                         "profile", email_address=session["user"]))
             else:
                 # invalid password
-                flash("Incorrect credentials.")
+                flash("Incorrect Password. Please Try Again.")
                 return redirect(url_for("login"))
 
         else:
             # the username is not registered
-            flash("Incorrect credentials")
+            flash("Email is Not Registered")
             return redirect(url_for("login"))
     return render_template("login.html", page_title="Doggie Login")
 
