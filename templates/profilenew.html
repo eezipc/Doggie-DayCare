@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block content %}
+ <!-- Page Title -->
+<div class="row">
+  <div class="col-12"><h1>{{page_title}}</h1></div>
+</div>
+<div>
+      <h5 >Your username is: {{ email_address }}</h5>
+      
+      <p class="card-text">
+      <hr>
+      You don't want to have a profile on our website anymore? No worries, you can delete your profile by clicking the button below.</p>
+    </div>
+    <div class="card-footer bg-transparent border-secondary mx-auto">
+    <!-- Trigger modal confirmation deletion profile  ------->
+        <button type="button" class="button" data-toggle="modal" data-target="#deleteModal">Delete Profile</button>
+    </div>
+
+     {% if session.user %}
+                
+                
+               <button
+                onclick="window.location.href='{{ url_for('logout') }}';"
+                class="button"
+              >
+                <span>Logout </span>
+              </button>
+                {% endif %}
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Do you wish to delete your profile?
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('delete_profile', email_address=email_address) }}" type="button" class="btn btn-danger" >Delete</a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Carousel -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to="0"
+      class="active"
+    ></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="daycare">
+        <img
+          class="d-block w-100"
+          src="../static/assets/img/dogtoycar.jpg"
+          alt="First slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="daycare"
+              ><i class="fas fa-paw"></i> Doggie Daycare</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="daycare"
+              >Click Here To Book A Doggie Daycare</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a class="" href="grooming"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/doggroomcar.jpg"
+          alt="Second slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="grooming"
+              ><i class="fas fa-paw"></i> Doggie Grooming</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="grooming"
+              >Click Here To Book A Doggie Groom</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a class="" href="overnight"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/dogsleep2car.jpg"
+          alt="Third slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="overnight"
+              ><i class="fas fa-paw"></i> Doggie Sleepover</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="overnight"
+              >Click Here To Book A Doggie Sleepover</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only carouseltext">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only carouseltext">Next</span>
+  </a>
+</div>
+
+ 
+{% endblock %}

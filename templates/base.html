@@ -101,22 +101,8 @@
               </button>
               <span class="sr-only">(current)</span>
             </li>
-            <li class="nav-item">
-              <button
-                onclick="window.location.href='{{ url_for('about') }}';"
-                class="button"
-              >
-                <span>About </span>
-              </button>
-            </li>
-            <li class="nav-item">
-              <button
-                onclick="window.location.href='{{ url_for('contact') }}';"
-                class="button"
-              >
-                <span>Contact </span>
-              </button>
-            </li>
+            
+           
             <li class="nav-item">
               <button
                 onclick="window.location.href='{{ url_for('daycare') }}';"
@@ -149,6 +135,25 @@
                 <span>Prices </span>
               </button>
             </li>
+
+{% if session.user %}
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('profile', email_address=session['user'])}}';"
+                class="button"
+              >
+                <span>Profile </span>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('logout') }}';"
+                class="button"
+              >
+                <span>Logout </span>
+              </button>
+            </li>
+            {% else %}
             <li class="nav-item">
               <button
                 onclick="window.location.href='{{ url_for('register') }}';"
@@ -157,6 +162,18 @@
                 <span>Register </span>
               </button>
             </li>
+            <li class="nav-item">
+              <button
+                onclick="window.location.href='{{ url_for('login') }}';"
+                class="button"
+              >
+                <span>Login </span>
+              </button>
+            </li>
+            
+            {% endif %}
+
+           
           </ul>
         </div>
       </div>
@@ -173,35 +190,114 @@
     <footer class="footer text-center">
       <div class="container">
         <ul class="list-inline mb-5">
-          <li class="list-inline-item">
+
+<li class="list-inline-item">
+
             <a
-              class="social-link rounded-circle text-white mr-3"
+              class="social-link rounded-circle text-white mr-3" 
               href="{{ url_for('index') }}"
             >
               <i class="fab fa-facebook-f"></i>
+            
+            
             </a>
+            <div class="icontext">Facebook</div>
+            
+          </li>
+
+          <li class="list-inline-item">
+
+            <a
+              class="social-link rounded-circle text-white mr-3" 
+              href="{{ url_for('index') }}"
+            >
+              <i class="fab fa-twitter"></i>
+            
+            
+            </a>
+            <div class="icontext">Twitter</div>
+            
           </li>
           <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white mr-3"
               href="{{ url_for('index') }}"
             >
-              <i class="fab fa-twitter"></i>
+              <i class="fas fa-building"></i>
             </a>
+            <div class="icontext">About</div>
           </li>
+          
           <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white"
-              href="{{ url_for('index') }}"
+              href="{{ url_for('contact') }}"
             >
-              <i class="fab fa-github"></i>
+              <i class="fas fa-envelope-square"></i>
             </a>
+            <div class="icontext">Contact</div>
           </li>
+          
+         
+            
         </ul>
+
+<ul class="list-inline mb-5">
+ {% if session.user %}
+                
+                <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white"
+              href="{{ url_for('profile', email_address=session['user'])}}"
+            >
+              <i class="far fa-id-badge"></i>
+            </a>
+            <div class="icontext">Profile</div>
+          </li>
+                
+                  <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white"
+              href="{{ url_for('logout') }}"
+            >
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+            <div class="icontext">Logout</div>
+          </li>
+                
+                {% else %}
+               
+                   <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white"
+              href="{{ url_for('register') }}"
+            > 
+              <i class="far fa-user"></i>
+              
+            </a>
+            <div class="icontext">Register</div>
+          </li>
+                
+                    <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white"
+              href="{{ url_for('login') }}"
+            >
+              <i class="fas fa-sign-in-alt"></i>
+            </a>
+            <div class="icontext">Login</div>
+          </li>
+                {% endif %}
+
+</ul>
         <p class="text-muted small mb-0">
           Copyright &copy; Doggie DayCare 2020
         </p>
+        
       </div>
+      
+                
+           
     </footer>
 
     <!-- Scroll to Top Button-->

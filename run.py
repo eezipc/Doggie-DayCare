@@ -1,9 +1,10 @@
 import os
 import json
-from flask import Flask, render_template, redirect, request, url_for, session
+from flask import Flask, render_template, redirect, request, url_for, session, flash, Markup
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 import bcrypt
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
@@ -64,6 +65,38 @@ def confirm():
         data = json.load(json_data)
     return render_template("confirm.html", page_title="Doggie Confirmation", doggie=data)
 
+
+#########################################
+
+# REGISTER------------------------------------
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        existing_user = mongo.db.doggielogin.find_one(
+            {"email_address": request.form.get("email_address").lower()})
+
+        if existing_user:
+            flash("Username already taken")
+            return redirect(url_for("register"))
+
+        register = {
+            "email_address": request.form.get("email_address").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "first_name": request.form.get("first_name").lower(),
+            "last_name": request.form.get("last_name").lower(),
+            "petname": request.form.get("petname").lower()
+        }
+        mongo.db.doggielogin.insert_one(register)
+
+         # put the user in session cookie
+        session["user"] = request.form.get("email_address").lower()
+        flash("Registration sucessfull")
+        return redirect(url_for("index", email_address=session["user"]))
+    return render_template("register.html")
+
+# LOGIN-----------------------------------------------------
+
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
@@ -71,30 +104,92 @@ def login():
             {"email_address": request.form.get("email_address").lower()})
 
         if existing_user:
-            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
-                session['email_address'] = request.form['email_address']
-                return redirect(url_for('index'))
+            # password match check
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("email_address").lower()
+                flash("Nice to see you again, {}!".format(
+                        request.form.get("email_address")))
+                return redirect(url_for(
+                        "index", username=session["user"]))
+            else:
+                # invalid password
+                flash("Incorrect credentials.")
+                return redirect(url_for("login"))
 
-    return 'Invalid username/password combination'
+        else:
+            # the username is not registered
+            flash("Incorrect credentials")
+            return redirect(url_for("login"))
+    return render_template('login.html')
+
+# USER'S PROFILE -----------------------
+@app.route("/profile/<email_address>", methods=['GET', 'POST'])
+def profile(email_address):
+    # get the session username from db
+    email_address = mongo.db.doggielogin.find_one(
+       {"email_address": session["user"]})["email_address"]
+
+    if session["user"]:
+        return render_template("profile.html", email_address=email_address)
+
+    return redirect(url_for("profile"))
+
+# LOGOUT -----------------------------------
+
+@app.route("/logout")
+def logout():
+    # remove user from current session cookie
+
+    flash("You have been logged out. See you soon!")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
+# DELETE PROFILE ------------------------------
+
+@app.route("/delete_profile/<email_address>", methods=["GET", "POST"])
+def delete_profile(email_address):
+    mongo.db.doggielogin.remove({"email_address": session["user"]})
+    session.clear()
+    flash("Your profile has been deleted.")
+    return redirect(url_for("index"))
+
+
+
+##########################################
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
-@app.route('/register', methods=['POST', 'GET'])
-def register():
-    data = []
-    with open("data/doggie.json", "r") as json_data:
-        data = json.load(json_data)
+#@app.route('/register', methods=['POST', 'GET'])
+#def register():
+#    data = []
+ #   with open("data/doggie.json", "r") as json_data:
+ #       data = json.load(json_data)
+#
+ #   if request.method == 'POST':
+  #      doggielogin = mongo.db.doggielogin
+   #     existing_user = doggielogin.find_one({'email_address' : request.form['email_address']})
+    #    if existing_user is None:
+     #       hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
+      #      doggielogin.insert({'email_address' : request.form['email_address'],  'password' : hashpass, 'first_name' : request.form['first_name'], 'last_name' : request.form['last_name'], 'petname' : request.form['petname'], })
+       #     session['email_address'] = request.form['email_address']
+        #    return redirect(url_for('confirm'))
+        #return 'That username already exists!'
 
-    if request.method == 'POST':
-        doggielogin = mongo.db.doggielogin
-        existing_user = doggielogin.find_one({'email_address' : request.form['email_address']})
-        if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            doggielogin.insert({'email_address' : request.form['email_address'],  'password' : hashpass, 'first_name' : request.form['first_name'], 'last_name' : request.form['last_name'], 'petname' : request.form['petname'], })
-            session['email_address'] = request.form['email_address']
-            return redirect(url_for('confirm'))
-        return 'That username already exists!'
-
-    return render_template("register.html", page_title="Doggie Register", doggie=data)
+    #return render_template("register.html", page_title="Doggie Register", doggie=data)
 
 @app.route('/overnight')
 def overnight():
