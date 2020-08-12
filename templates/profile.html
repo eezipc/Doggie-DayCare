@@ -1,31 +1,76 @@
-{% extends 'base.html' %}
-{% block content %}
-    <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">{{page_title}}</h5>
-            <div class="card card-profile border-secondary mb-3 mx-auto">
-    <div>
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+
+<div class="container">
+
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are You Sure You Want To Delete Your Profile?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="{{ url_for('delete_profile', email_address=email_address) }}" type="button" class="btn btn-danger" >Delete</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- Title Section -->
+<div class="row">
+  <div class="col-12"><h1>{{page_title}}</h1></div>
+</div>
+<!-- Left Card Section -->
+<div class="cardbackground p-3">
+  <div class="cardcontent">
+    <section class="mb-4">
+      <p class="text-center w-responsive mx-auto mb-5"></p>
+      <p>View Your Account Details Below</p>
+
+<div>
       <h5 >Your username is: {{ email_address }}</h5>
-      <h5 >Your username is: {{ petname }}</h5>
+      
       <p class="card-text">
       <hr>
       You don't want to have a profile on our website anymore? No worries, you can delete your profile by clicking the button below.</p>
     </div>
-    <div class="card-footer bg-transparent border-secondary mx-auto">
-    <!-- Trigger modal confirmation deletion profile  ------->
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Profile</button>
-    </div>
-</div>
+ <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+  Delete Profile
+</button>
 
-            
-          </div>
-        </div>
-      </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+
+      {% if session.user %}
+                
+                
+               <button
+                onclick="window.location.href='{{ url_for('logout') }}';"
+                class="button"
+              >
+                <span>Logout </span>
+              </button>
+                {% endif %}
+
+       
+
+
+<!--
+
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -38,38 +83,119 @@
     </div>
   </div>
 </div>
+-->
+      <div class="row">
+        <div class="col-md-9 mb-md-0 mb-5 p-5">
+        <!-- Profile Section -->
 
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto"> <div class="container"> 
-        <div class="row"> 
-            <div class="col-12"> 
-               
-                <div class="card"> 
-                    <img class="card-img-top" src="" alt=""> 
+
+        </div>
+
   
-                    <div class="card-body"> 
-                    {% for member in doggie %}
-                        <h5 class="card-title">{{ member.service }}
-        </h5> 
-                        <p class="card-text"> 
-                           <p>{{ member.description }}</p>
-                        </p> 
-                          
-                        <a href="#" class="btn btn-outline-primary btn-sm"> 
-                            Card link 
-                        </a> 
-                        <img class="img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
-                   {% endfor %}
-                    </div> 
-                </div> 
-            </div> 
-            
-        </div> 
-    </div> 
-      </div>
-    </div>
-
-
   </div>
 
-  
+
+    </section>
+  </div>
+<div class="container pt-5">
+ <!-- Carousel -->
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li
+      data-target="#carouselExampleIndicators"
+      data-slide-to="0"
+      class="active"
+    ></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="daycare">
+        <img
+          class="d-block w-100"
+          src="../static/assets/img/dogtoycar.jpg"
+          alt="First slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="daycare"
+              ><i class="fas fa-paw"></i> Doggie Daycare</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="daycare"
+              >Click Here To Book A Doggie Daycare</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a class="" href="grooming"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/doggroomcar.jpg"
+          alt="Second slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="grooming"
+              ><i class="fas fa-paw"></i> Doggie Grooming</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="grooming"
+              >Click Here To Book A Doggie Groom</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a class="" href="overnight"
+        ><img
+          class="d-block w-100"
+          src="../static/assets/img/dogsleep2car.jpg"
+          alt="Third slide"
+      /></a>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="scrim">
+          <h5>
+            <a class="carouseltext" href="overnight"
+              ><i class="fas fa-paw"></i> Doggie Sleepover</a
+            >
+          </h5>
+          <p>
+            <a class="carouseltext" href="overnight"
+              >Click Here To Book A Doggie Sleepover</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only carouseltext">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only carouseltext">Next</span>
+  </a>
+</div>
+</div>
+ 
 {% endblock %}
