@@ -91,8 +91,8 @@ def register():
          # put the user in session cookie
         session["user"] = request.form.get("email_address").lower()
         flash("Registration sucessfull")
-        return redirect(url_for("index", email_address=session["user"]))
-    return render_template("register.html")
+        return redirect(url_for("profile", email_address=session["user"]))
+    return render_template("register.html", page_title="Doggie Register")
 
 # LOGIN-----------------------------------------------------
 
@@ -111,7 +111,7 @@ def login():
                 flash("Nice to see you again, {}!".format(
                         request.form.get("email_address")))
                 return redirect(url_for(
-                        "index", username=session["user"]))
+                        "profile", email_address=session["user"]))
             else:
                 # invalid password
                 flash("Incorrect credentials.")
@@ -121,19 +121,22 @@ def login():
             # the username is not registered
             flash("Incorrect credentials")
             return redirect(url_for("login"))
-    return render_template('login.html')
+    return render_template("login.html", page_title="Doggie Login")
 
 # USER'S PROFILE -----------------------
 @app.route("/profile/<email_address>", methods=['GET', 'POST'])
 def profile(email_address):
+    
     # get the session username from db
     email_address = mongo.db.doggielogin.find_one(
        {"email_address": session["user"]})["email_address"]
 
     if session["user"]:
-        return render_template("profile.html", email_address=email_address)
+        return render_template("profile.html", email_address=email_address, page_title="Doggie Profile")
 
     return redirect(url_for("profile"))
+
+
 
 # LOGOUT -----------------------------------
 
@@ -155,41 +158,22 @@ def delete_profile(email_address):
     flash("Your profile has been deleted.")
     return redirect(url_for("index"))
 
+#@app.route('/update_email/<email_address>', methods=["GET", "POST"])
+#def update_email(email_address):
+#    emailupdate = mongo.db.doggielogin
+#    emailupdate.update({"email_address": session["user"]},
+ #   {
+ #       'email_address':request.form.get('email_address'),
+  #      'petname':request.form.get('petname'),
+   #     'first_name': request.form.get('first_name'),
+    #    'last_name': request.form.get('last_name')
+  #  })
+   # return redirect(url_for('index'))
 
 
 ##########################################
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-#@app.route('/register', methods=['POST', 'GET'])
-#def register():
-#    data = []
- #   with open("data/doggie.json", "r") as json_data:
- #       data = json.load(json_data)
-#
- #   if request.method == 'POST':
-  #      doggielogin = mongo.db.doggielogin
-   #     existing_user = doggielogin.find_one({'email_address' : request.form['email_address']})
-    #    if existing_user is None:
-     #       hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-      #      doggielogin.insert({'email_address' : request.form['email_address'],  'password' : hashpass, 'first_name' : request.form['first_name'], 'last_name' : request.form['last_name'], 'petname' : request.form['petname'], })
-       #     session['email_address'] = request.form['email_address']
-        #    return redirect(url_for('confirm'))
-        #return 'That username already exists!'
-
-    #return render_template("register.html", page_title="Doggie Register", doggie=data)
 
 @app.route('/overnight')
 def overnight():
@@ -208,7 +192,7 @@ def prices():
 @app.route('/viewbooking')
 def viewbooking():
     return render_template('viewbooking.html',
-                           doggiebook=mongo.db.doggiebook.find())
+                           doggiebook=mongo.db.doggiebook.find(), page_title="Doggie Bookings")
 
 @app.route('/edit_booking/<task_id>', methods=['POST', 'GET'])
 def edit_booking(task_id):
@@ -218,7 +202,7 @@ def edit_booking(task_id):
     return render_template('editbooking.html', task=the_task, login=edit_login, pets=edit_pets)
 
 
-@app.route('/update_booking/<task_id>', methods=["POST"])
+@app.route('/update_booking/<task_id>', methods=['POST', 'GET'])
 def update_booking(task_id):
     tasks = mongo.db.doggiebook
     tasks.update( {'_id': ObjectId(task_id)},

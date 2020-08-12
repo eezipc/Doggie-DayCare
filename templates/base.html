@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <link rel="icon" href="../static/assets/img/doglogo.png">
+    <link rel="icon" href="../static/assets/img/doglogo.png" />
     <title>Doggie Day Care</title>
     <link
       rel="stylesheet"
@@ -29,12 +29,12 @@
     />
 
     <!-- Custom Fonts -->
-   
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    
+
     <!-- Custom CSS -->
     <link
       href="{{ url_for('static', filename='../static/assets/css/stylish-portfolio.min.css' ) }}"
@@ -45,7 +45,10 @@
       rel="stylesheet"
     />
 
-<script src="https://kit.fontawesome.com/e6035afc3e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e6035afc3e.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Email Contact Form Scripts -->
     <script
@@ -61,10 +64,6 @@
         emailjs.init("user_l0VrxRy6jOgDnR1SV1KpH");
       })();
     </script>
-
-    
-
-
   </head>
 
   <body id="page-top">
@@ -101,8 +100,7 @@
               </button>
               <span class="sr-only">(current)</span>
             </li>
-            
-           
+
             <li class="nav-item">
               <button
                 onclick="window.location.href='{{ url_for('daycare') }}';"
@@ -136,7 +134,7 @@
               </button>
             </li>
 
-{% if session.user %}
+            {% if session.user %}
             <li class="nav-item">
               <button
                 onclick="window.location.href='{{ url_for('profile', email_address=session['user'])}}';"
@@ -170,10 +168,8 @@
                 <span>Login </span>
               </button>
             </li>
-            
-            {% endif %}
 
-           
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -190,33 +186,26 @@
     <footer class="footer text-center">
       <div class="container">
         <ul class="list-inline mb-5">
-
-<li class="list-inline-item">
-
+          <li class="list-inline-item">
             <a
-              class="social-link rounded-circle text-white mr-3" 
+              class="social-link rounded-circle text-white mr-3"
               href="{{ url_for('index') }}"
             >
               <i class="fab fa-facebook-f"></i>
-            
-            
             </a>
             <div class="icontext">Facebook</div>
-            
           </li>
 
-          <li class="list-inline-item">
+          
 
+          <li class="list-inline-item">
             <a
-              class="social-link rounded-circle text-white mr-3" 
+              class="social-link rounded-circle text-white mr-3"
               href="{{ url_for('index') }}"
             >
               <i class="fab fa-twitter"></i>
-            
-            
             </a>
             <div class="icontext">Twitter</div>
-            
           </li>
           <li class="list-inline-item">
             <a
@@ -227,7 +216,7 @@
             </a>
             <div class="icontext">About</div>
           </li>
-          
+
           <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white"
@@ -237,15 +226,11 @@
             </a>
             <div class="icontext">Contact</div>
           </li>
-          
-         
-            
-        </ul>
+        
 
-<ul class="list-inline mb-5">
- {% if session.user %}
-                
-                <li class="list-inline-item">
+          {% if session.user %}
+
+          <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white"
               href="{{ url_for('profile', email_address=session['user'])}}"
@@ -254,8 +239,8 @@
             </a>
             <div class="icontext">Profile</div>
           </li>
-                
-                  <li class="list-inline-item">
+
+          <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white"
               href="{{ url_for('logout') }}"
@@ -264,21 +249,20 @@
             </a>
             <div class="icontext">Logout</div>
           </li>
-                
-                {% else %}
-               
-                   <li class="list-inline-item">
+
+          {% else %}
+
+          <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white"
               href="{{ url_for('register') }}"
-            > 
+            >
               <i class="far fa-user"></i>
-              
             </a>
             <div class="icontext">Register</div>
           </li>
-                
-                    <li class="list-inline-item">
+
+          <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white"
               href="{{ url_for('login') }}"
@@ -287,17 +271,12 @@
             </a>
             <div class="icontext">Login</div>
           </li>
-                {% endif %}
-
-</ul>
+          {% endif %}
+        </ul>
         <p class="text-muted small mb-0">
           Copyright &copy; Doggie DayCare 2020
         </p>
-        
       </div>
-      
-                
-           
     </footer>
 
     <!-- Scroll to Top Button-->
@@ -305,39 +284,42 @@
     <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
-   
-
-    
-
-
-
-
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    
+
     <!-- Bootstrap core JavaScript -->
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{ url_for('static', filename='../static/assets/vendor/jquery/jquery.min.js' ) }}"></script>
-  <script src="{{ url_for('static', filename='../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ) }}"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='../static/assets/vendor/jquery/jquery.min.js' ) }}"></script>
+    <script src="{{ url_for('static', filename='../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ) }}"></script>
 
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='../static/assets/js/stylish-portfolio.min.js' ) }}"></script>
 
- <!-- Datepicker Script -->
+    <!-- Datepicker Script -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
       $("#datepicker").datepicker();
     </script>
 
- <!-- Email Contact Form Script -->
+    <!-- Email Contact Form Script -->
     <script src="{{ url_for('static', filename='../static/assets/js/sendEmail.js' ) }}"></script>
-
-
   </body>
 </html>
