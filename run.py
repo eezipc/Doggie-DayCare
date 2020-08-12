@@ -123,7 +123,9 @@ def login():
             return redirect(url_for("login"))
     return render_template("login.html", page_title="Doggie Login")
 
-# USER'S PROFILE -----------------------
+
+
+#USER'S PROFILE -----------------------
 @app.route("/profile/<email_address>", methods=['GET', 'POST'])
 def profile(email_address):
     
@@ -158,17 +160,7 @@ def delete_profile(email_address):
     flash("Your profile has been deleted.")
     return redirect(url_for("index"))
 
-#@app.route('/update_email/<email_address>', methods=["GET", "POST"])
-#def update_email(email_address):
-#    emailupdate = mongo.db.doggielogin
-#    emailupdate.update({"email_address": session["user"]},
- #   {
- #       'email_address':request.form.get('email_address'),
-  #      'petname':request.form.get('petname'),
-   #     'first_name': request.form.get('first_name'),
-    #    'last_name': request.form.get('last_name')
-  #  })
-   # return redirect(url_for('index'))
+
 
 
 ##########################################

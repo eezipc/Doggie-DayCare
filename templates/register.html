@@ -4,7 +4,7 @@
   <div class="col-12"><h1>{{page_title}}</h1></div>
 </div>
 <!-- Left Card Section -->
-<div class="cardbackground p-3">
+<div class="cardbackground ">
   <div class="cardcontent">
     <section class="mb-4">
       <p class="text-center w-responsive mx-auto mb-5"></p>
@@ -23,7 +23,7 @@
     </div>
 {% endif %}
 {% endwith %}
-          <form method="POST" action="{{ url_for('register') }}">
+          <form method="POST" action="{{ url_for('register') }}" class="text-center border border-light p-5">
             <div class="form-group">
               <label for="email_address">Enter Your Email Address</label>
               <input

@@ -5,7 +5,7 @@
   <div class="col-12"><h1>{{page_title}}</h1></div>
 </div>
 <!-- Left Card Section -->
-<div class="cardbackground p-3">
+<div class="cardbackground ">
   <div class="cardcontent">
     <section class="mb-4">
       <p class="text-center w-responsive mx-auto mb-5"></p>
@@ -21,7 +21,7 @@
     </div>
 {% endif %}
 {% endwith %}
-<form class="form-signin" action="{{ url_for('login') }}" method="POST">
+<form class="form-signin text-center border border-light p-5" action="{{ url_for('login') }}" method="POST" >
               <div class="form-label-group">
                 <input type="email" id="email_address" class="form-control" name="email_address" placeholder="Email address" required >
                 <label for="email_address">Email address</label>

@@ -226,7 +226,15 @@
             </a>
             <div class="icontext">Contact</div>
           </li>
-        
+         <li class="list-inline-item">
+            <a
+              class="social-link rounded-circle text-white"
+              href="{{ url_for('viewbooking') }}"
+            >
+              <i class="fas fa-book"></i>
+            </a>
+            <div class="icontext">Bookings</div>
+          </li>
 
           {% if session.user %}
 

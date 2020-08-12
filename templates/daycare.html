@@ -11,7 +11,7 @@
             <div class="col-lg-6 mb-4 "> 
                 <div class="card "> 
                     <img class="card-img-top"> 
-                    <div class="card-body p-3"> 
+                    <div class="card-body "> 
                     <div class="cardbackground ">
                     <div class="cardcontent p-5">
                         <h2 class="card-title">Book A Day Out For Your Doggie</h2> 
@@ -20,7 +20,7 @@
                         <br> No more bored, home alone dogs.</p>
                         <h3>Book a day out for your doggie below</h3>
                         <!-- Booking Form -->
-                        <form action="{{ url_for('insert_booking') }}" method="POST" >
+                        <form action="{{ url_for('insert_booking') }}" method="POST" class="text-center border border-light p-5">
   <div class="form-group">
     <label for="email_address">Enter Your Email address</label>
     <input type="email" class="form-control" name= "email_address" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -31,8 +31,10 @@
     <input type="text" class="form-control" id="exampleInputPassword1" name="petname" placeholder="Pet Name">
   </div>
   <div class="form-group">
-    <label for="service">Enter The Service Your Pet Requires</label>
-    <input type="text" class="form-control" id="service" name="service" placeholder="Service Required">
+    <label for="service">Service Your Pet Requires</label>
+<select id="service" name="service">
+    <option value="daycare">Daycare</option>
+  </select>
   </div>
 
 <div class="form-group">
@@ -57,7 +59,7 @@
                     <img class="card-img-top"> 
   
                     <!-- Right Card Section -->
-                    <div class="card-body p-3"> 
+                    <div class="card-body"> 
                     <!-- Beginning Loop Section -->
                      {% for member in doggie %}
                     <div class="cardcontent">
