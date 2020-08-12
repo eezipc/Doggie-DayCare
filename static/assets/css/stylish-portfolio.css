@@ -629,3 +629,8 @@ a:hover, a:focus, a:active {
 .table {
   color: white;
 }
+
+.icontext {
+    text-align: center;
+    font-size: 15px;
+}
