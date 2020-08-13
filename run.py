@@ -139,14 +139,25 @@ def logout():
 def viewprofile(email_address):
     mongo.db.doggielogin.find_one({"email_address": session["user"]})
     return render_template('viewprofile.html',
-                           doggielogin=mongo.db.doggielogin.find({"email_address": session["user"]}))
+                           doggielogin=mongo.db.doggielogin.find({"email_address": session["user"]}), page_title="View Profile")
+
+
+#View Profile Booking Page
+@app.route("/viewprofilebooking/<email_address>", methods=['GET', 'POST'])
+def viewprofilebooking(email_address):
+    mongo.db.doggiebook.find_one({"email_address": session["user"]})
+    return render_template('viewprofilebooking.html',
+                           doggiebook=mongo.db.doggiebook.find({"email_address": session["user"]}), page_title="View Profile Bookings")
 
 
 #Edit Profile Page
 @app.route('/editprofile/<email_address>', methods=['POST', 'GET'])
 def editprofile(email_address):
+    data = []
+    with open("data/doggie.json", "r") as json_data:
+        data = json.load(json_data)
     the_task2 =  mongo.db.doggielogin.find_one({"email_address": session["user"]})
-    return render_template('editprofile.html', task2=the_task2,  page_title="Doggie update Booking")
+    return render_template('editprofile.html', task2=the_task2,  page_title="Doggie Edit Booking", doggie=data)
 
 
 #Update profile Page
@@ -156,6 +167,7 @@ def updateprofile(email_address):
     tasksupdate.update({"email_address": session["user"]},
     {
         'email_address':request.form.get('email_address'),
+        'password':request.form.get('password'),
         'petname':request.form.get('petname'),
         'first_name': request.form.get('first_name'),
         'last_name': request.form.get('last_name')
@@ -215,13 +227,13 @@ def update_booking(task_id):
         'service': request.form.get('service'),
         'date': request.form.get('date')
     })
-    return redirect(url_for('viewbooking'))
+    return redirect(url_for('index'))
 
 #Delete Booking Page
 @app.route('/delete_booking/<task_id>')
 def delete_booking(task_id):
     mongo.db.doggiebook.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('viewbooking'))
+    return redirect(url_for('index'))
 
 #End of Run.py
 if __name__ == '__main__':

@@ -12,13 +12,14 @@
 			<div class="card "> 
 				<img class="card-img-top"> 
 					<div class="card-body"> 
-						<div class="cardbackground ">
+						<div class="cardbackground">
 							<div class="cardcontent p-5">
-								<h2 class="card-title">Book A Day Out For Your Doggie</h2> 
-								<p class="intro-text">Drop your dog off at Doggie Daycare safe in the knowledge that your dog will spend the day playing and socialising with lots of doggie friends. 
-									<br> A normal day is packed full of fun, where they will also learn vital skills such as bite inhibition, appropriate playing, build confidence and learn how to read other dogs’ body language to help communicate together. 
-										<br> No more bored, home alone dogs.</p>
-										<h3>Book a day out for your doggie below</h3>
+								<h2 class="card-title">Edit Your Profile</h2> 
+								<p class="intro-text">Change the fields below to edit your profile. </p>
+									<p class="intro-text">Or Click the button below to return to the profile page </p>
+                                    <p><a href="contact" class="btn btn-sm"> 
+																	<i class="fas fa-paw"></i></a>
+																<button onclick="window.location.href='{{ url_for('profile', email_address=session['user'])}}';" class="button" ><span>Profile </span></button></p>
 										<!-- Booking Form -->
 										<form action="{{ url_for('updateprofile', email_address=session['user'])}}" method="POST" >
 											<div class="form-group">
@@ -26,9 +27,13 @@
 												<input type="email" class="form-control" name= "email_address" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{task2.email_address}}" >
 													<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 												</div>
+                                                <div class="form-group">
+													<label for="password">Password</label>
+													<input type="password" class="form-control" id="exampleInputPassword1" name="password" value="{{task2.password}}">
+													</div>
 												<div class="form-group">
 													<label for="petname">Pet Name</label>
-													<input type="text" class="form-control" id="exampleInputPassword1" name="petname" value="{{task2.petname}}">
+													<input type="text" class="form-control" id="petname" name="petname" value="{{task2.petname}}">
 													</div>
 													<div class="form-group">
 														<label for="first_name">First Name</label>
@@ -43,43 +48,40 @@
 															<button type="submit" class="btn btn-primary">Edit Booking</button>
 														</form> <br>
 
-															<p><a href="contact" class="btn btn-sm"> 
-																	<i class="fas fa-paw"></i></a>
-																<button onclick="window.location.href='{{ url_for('contact') }}';" class="button" ><span>Contact </span></button></p>
-							
+															
+								
                                                         </div> 
 													</div> 
 												</div> 
 											</div>
 										</div>
 
-										<div class="col-lg-6 mb-4"> 
-											<div class="card"> 
-												<img class="card-img-top"> 
-
-													<!-- Right Card Section -->
-													<div class="card-body"> 
-														<!-- Beginning Loop Section -->
-														{% for member in doggie %}
-														<div class="cardcontent">
-															<h2 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
-															<p class="card-text"> 
-																<p>{{ member.description }}</p>
-															</p> 
-
-															<img class="img-responsive img-fluid" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
-																<p><a href="grooming" class="btn btn-sm"> 
-																		<i class="fas fa-paw"></i></a>
-
-																	<button onclick="window.location.href='{{ member.url }}';" class="button" ><span>Enter</span></button>
-																</p>
-															</div>
-															{% endfor %}
-														</div> 
-													</div> 
-												</div> 
-											</div>
-										</div>
+										<!-- Right Card Section -->
+								<div class="col-lg-6 mb-4"> 
+									<div class="card"> 
+										<img class="card-img-top"> 
+											<div class="card-body p-0">
+												<!-- Beginning of Loop Section -->
+												{% for member in doggie %}
+												<div class="cardcontent">
+													<h2 class="card-title"><i class="fas fa-paw "></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
+													<p class="card-text"> 
+														<p>{{ member.description }}</p>
+													</p> 
+													<p>
+														<img class="img-responsive img-fluid" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
+															<p><a href="grooming" class="btn btn-sm"> 
+																	<i class="fas fa-paw fa-2x"></i></a>
+																<button onclick="window.location.href='{{ member.url }}';" class="button" ><span>Enter</span></button>
+															</p>
+														</p>
+													</div>
+													{% endfor %}
+												</div>
+											</div> 
+										</div> 
+									</div> 
+								</div> 
 										{% endblock %}
 
 										

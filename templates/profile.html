@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<!-- Left Card Section -->
-	<div class="cardbackground">
+	<div class="cardbackground pt-3 imageborder">
 		<div class="cardcontent">
 			<section class="mb-4">
 				<p class="text-center w-responsive mx-auto mb-5"></p>
@@ -39,29 +39,29 @@
 				<p>View Your Account Details Below</p>
 				<div>
 					<h5 >Your username is: {{ email_address }}</h5>
-                    <h5 >Click Below to view your profile</h5>
-                     
-														<div><button
-                onclick="window.location.href='{{ url_for('viewprofile', email_address=session['user'])}}';"
-                class="button"
-              >
-                <span>Profile </span>
-              </button></div>
+                                      
+													
 												
 					<p class="card-text">
 						<hr>
-							You Can Delete Your Profile By Clicking the Delete Button Below</p>
+							You Can Edit Or Delete Your Profile By Clicking The Buttons Below</p>
+                            <p class="card-text">
+						<hr>
+							Or You Can Click the Logout Button To Log Out Of The System</p>
 					</div>
 					<!-- Button trigger modal for delete profile-->
 					<button type="button" class="button" data-toggle="modal" data-target="#basicExampleModal">
 						Delete Profile
 					</button>
 					{% if session.user %}
-					<button
-							onclick="window.location.href='{{ url_for('logout') }}';"
-							class="button"
-							>
-						<span>Logout </span>
+					<button type="button" class="button"  >
+						<a href="{{ url_for('logout') }}" class="button">Logout</a>
+					</button>
+                    <button type="button" class="button"  >
+						<a href="{{ url_for('viewprofile', email_address=session['user'])}}" class="button">Edit Profile</a>
+					</button>
+                    <button type="button" class="button"  >
+						<a href="{{ url_for('viewprofilebooking', email_address=session['user'])}}" class="button">Edit Bookings</a>
 					</button>
 					{% endif %}
 					<div class="row">
