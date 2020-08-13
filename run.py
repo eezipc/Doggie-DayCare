@@ -167,10 +167,13 @@ def viewbooking():
 #Edit Booking Page
 @app.route('/edit_booking/<task_id>', methods=['POST', 'GET'])
 def edit_booking(task_id):
+    data = []
+    with open("data/doggie.json", "r") as json_data:
+        data = json.load(json_data)
     the_task =  mongo.db.doggiebook.find_one({"_id": ObjectId(task_id)})
     edit_login =  mongo.db.doggielogin.find()
     edit_pets = mongo.db.doggiepets.find()
-    return render_template('editbooking.html', task=the_task, login=edit_login, pets=edit_pets)
+    return render_template('editbooking.html', task=the_task, login=edit_login, pets=edit_pets, page_title="Doggie Edit Booking", doggie=data)
 
 #Update Booking Page
 @app.route('/update_booking/<task_id>', methods=['POST', 'GET'])

@@ -669,6 +669,10 @@ a:hover, a:focus, a:active {
 
 .imageborder {
         display: block;
-        
+        background: transparent;
+            padding: 8px;
+            border: 5px solid #ccc;
+            box-shadow: 10px 10px 10px #999;
         
 }
+

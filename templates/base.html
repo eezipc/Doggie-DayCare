@@ -191,14 +191,18 @@
     <footer class="footer text-center">
       <div class="container">
         <ul class="list-inline mb-5">
-          <li class="list-inline-item">
+          <li class="list-inline-item nav-item">
+         
             <a
               class="social-link rounded-circle text-white mr-3"
               href="{{ url_for('index') }}"
             >
               <i class="fab fa-facebook-f"></i>
+              
             </a>
-            <div class="icontext font-weight-bold text-center">Facebook</div>
+            <span class="d-none d-sm-inline">Facebook</span>
+          
+            <!--<div class="icontext font-weight-bold text-center">Facebook</div>-->
           </li>
 
           <li class="list-inline-item">
@@ -208,7 +212,8 @@
             >
               <i class="fab fa-twitter"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">Twitter</div>
+            <span class="d-none d-sm-inline">Twitter</span>
+            <!-- <div class="icontext font-weight-bold text-center">Twitter</div> -->
           </li>
           <li class="list-inline-item">
             <a
@@ -217,7 +222,8 @@
             >
               <i class="fas fa-building"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">About</div>
+            <span class="d-none d-sm-inline">About</span>
+            <!-- <div class="icontext font-weight-bold text-center">About</div> -->
           </li>
 
           <li class="list-inline-item">
@@ -227,7 +233,7 @@
             >
               <i class="fas fa-envelope-square"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">Contact</div>
+            <span class="d-none d-sm-inline">Contact</span>
           </li>
           <li class="list-inline-item">
             <a
@@ -236,7 +242,7 @@
             >
               <i class="fas fa-book"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">Bookings</div>
+            <span class="d-none d-sm-inline">Bookings</span>
           </li>
 <!-- Python Loop for buttons depending on user logged in or out-->
 
@@ -249,7 +255,7 @@
             >
               <i class="far fa-id-badge"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">Profile</div>
+            <span class="d-none d-sm-inline">Profile</span>
           </li>
 
           <li class="list-inline-item">
@@ -259,7 +265,7 @@
             >
               <i class="fas fa-sign-out-alt"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">Logout</div>
+            <span class="d-none d-sm-inline">Logout</span>
           </li>
 
           {% else %}
@@ -271,7 +277,7 @@
             >
               <i class="far fa-user"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">Register</div>
+            <span class="d-none d-sm-inline">Register</span>
           </li>
 
           <li class="list-inline-item">
@@ -281,7 +287,7 @@
             >
               <i class="fas fa-sign-in-alt"></i>
             </a>
-            <div class="icontext font-weight-bold text-center">Login</div>
+            <span class="d-none d-sm-inline">Login</span>
           </li>
           {% endif %}
         </ul>

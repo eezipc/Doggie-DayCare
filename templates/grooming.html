@@ -59,14 +59,14 @@
 												<!-- Beginning of Loop Section -->
 												{% for member in doggie %}
 												<div class="cardcontent">
-													<h2 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
+													<h2 class="card-title"><i class="fas fa-paw "></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
 													<p class="card-text"> 
 														<p>{{ member.description }}</p>
 													</p> 
 													<p>
 														<img class="img-responsive img-fluid" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
 															<p><a href="grooming" class="btn btn-sm"> 
-																	<i class="fas fa-paw"></i></a>
+																	<i class="fas fa-paw fa-2x"></i></a>
 																<button onclick="window.location.href='{{ member.url }}';" class="button" ><span>Enter</span></button>
 															</p>
 														</p>
