@@ -4,7 +4,6 @@
   <div class="col-12"><h1>{{page_title}}</h1></div>
 </div>
 
-
 <!-- Information Submitted Section -->
 <div class="cardbackground">
   <div class="cardcontent">
@@ -28,14 +27,35 @@
 <!-- Doggie Image-->
 <div class="d-flex bd-highlight">
   <div class="p-2 flex-fill bd-highlight font-weight-bold">
-    <div>
+    <div class="containeroverlay">
       <a class="img-responsive img-fluid" href="{{ url_for('index') }}">
         <img
-          style="height: 75%; width: 75%; object-fit: contain;"
+          style="
+            height: 75%;
+            width: 75%;
+            object-fit: contain;
+            background: transparent;
+            padding: 8px;
+            border: 5px solid #ccc;
+            box-shadow: 10px 10px 10px #999;
+          "
           src="{{ url_for('static', filename='../static/assets/img/awesome.jpg' ) }}"
           alt="Doggie Daycare"
         />
       </a>
+      <div class="overlay">
+        <div class="textoverlay">
+          <div class="scrim">
+            <a
+              class="img-responsive img-fluid imageborder"
+              href="{{ url_for('index') }}"
+            >
+              <p>Thanks For Booking</p>
+              <p>Contact Us If You Have Any Questions</p>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
