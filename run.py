@@ -134,6 +134,34 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+#View Profile Page
+@app.route("/viewprofile/<email_address>", methods=['GET', 'POST'])
+def viewprofile(email_address):
+    mongo.db.doggielogin.find_one({"email_address": session["user"]})
+    return render_template('viewprofile.html',
+                           doggielogin=mongo.db.doggielogin.find({"email_address": session["user"]}))
+
+
+#Edit Profile Page
+@app.route('/editprofile/<email_address>', methods=['POST', 'GET'])
+def editprofile(email_address):
+    the_task2 =  mongo.db.doggielogin.find_one({"email_address": session["user"]})
+    return render_template('editprofile.html', task2=the_task2,  page_title="Doggie update Booking")
+
+
+#Update profile Page
+@app.route('/updateprofile/<email_address>', methods=['POST', 'GET'])
+def updateprofile(email_address):
+    tasksupdate = mongo.db.doggielogin
+    tasksupdate.update({"email_address": session["user"]},
+    {
+        'email_address':request.form.get('email_address'),
+        'petname':request.form.get('petname'),
+        'first_name': request.form.get('first_name'),
+        'last_name': request.form.get('last_name')
+    })
+    return redirect(url_for('index'))
+
 #Delete Profile Page
 @app.route("/delete_profile/<email_address>", methods=["GET", "POST"])
 def delete_profile(email_address):
@@ -174,6 +202,7 @@ def edit_booking(task_id):
     edit_login =  mongo.db.doggielogin.find()
     edit_pets = mongo.db.doggiepets.find()
     return render_template('editbooking.html', task=the_task, login=edit_login, pets=edit_pets, page_title="Doggie Edit Booking", doggie=data)
+
 
 #Update Booking Page
 @app.route('/update_booking/<task_id>', methods=['POST', 'GET'])

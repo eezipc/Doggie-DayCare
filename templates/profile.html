@@ -39,6 +39,15 @@
 				<p>View Your Account Details Below</p>
 				<div>
 					<h5 >Your username is: {{ email_address }}</h5>
+                    <h5 >Click Below to view your profile</h5>
+                     
+														<div><button
+                onclick="window.location.href='{{ url_for('viewprofile', email_address=session['user'])}}';"
+                class="button"
+              >
+                <span>Profile </span>
+              </button></div>
+												
 					<p class="card-text">
 						<hr>
 							You Can Delete Your Profile By Clicking the Delete Button Below</p>
