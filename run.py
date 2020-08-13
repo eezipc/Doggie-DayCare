@@ -78,7 +78,7 @@ def register():
         existing_user = mongo.db.doggielogin.find_one(
             {"email_address": request.form.get("email_address").lower()})
         if existing_user:
-            flash("Email Address is already registered")
+            flash("This Email Is Already Registered")
             return redirect(url_for("register"))
         register = {
             "email_address": request.form.get("email_address").lower(),
@@ -89,7 +89,7 @@ def register():
         }
         mongo.db.doggielogin.insert_one(register)
         session["user"] = request.form.get("email_address").lower()
-        flash("Your Account Has Been Registered")
+        flash("Congratulations, Your Account Has Been Registered")
         return redirect(url_for("profile", email_address=session["user"]))
     return render_template("register.html", page_title="Doggie Register")
 
@@ -100,21 +100,20 @@ def login():
         existing_user = mongo.db.doggielogin.find_one(
             {"email_address": request.form.get("email_address").lower()})
         if existing_user:
-            
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("email_address").lower()
-                flash("Welcome Back, {}!".format(
+                flash("Who's a Good Doggie?, {} is a Good Doggie".format(
                         request.form.get("email_address")))
                 return redirect(url_for(
                         "profile", email_address=session["user"]))
             else:
                 
-                flash("Incorrect Password. Please Try Again.")
+                flash("Password is incorrect. Please Try again")
                 return redirect(url_for("login"))
         else:
            
-            flash("Email is Not Registered")
+            flash("Sorry, we don't recognise that Email Address")
             return redirect(url_for("login"))
     return render_template("login.html", page_title="Doggie Login")
 
@@ -130,7 +129,7 @@ def profile(email_address):
 #Logout Page
 @app.route("/logout")
 def logout():
-    flash("You have been logged out. See you soon!")
+    flash("You have been logged out..... Walkies?")
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -179,7 +178,7 @@ def updateprofile(email_address):
 def delete_profile(email_address):
     mongo.db.doggielogin.remove({"email_address": session["user"]})
     session.clear()
-    flash("Your profile has been deleted.")
+    flash("Goodbye")
     return redirect(url_for("index"))
 
 #Overnight Page
