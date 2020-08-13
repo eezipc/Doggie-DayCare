@@ -9,10 +9,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'doggiedatabase'
-app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
-app.secret_key = os.environ.get("SECRET_KEY")
-
+											#Connect Database
+app.config['MONGO_DBNAME'] = 'doggiedatabase'
+app.config['MONGO_URI'] = 'mongodb+srv://doggieuser:doggiepassword@doggiecluster.wtitg.mongodb.net/doggiedatabase?retryWrites=true&w=majority'
 
 
 mongo = PyMongo(app)
