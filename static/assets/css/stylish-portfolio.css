@@ -1,5 +1,5 @@
 
-/* Background */
+/* bODY */
 body,
 html {
   width: 100%;
@@ -11,7 +11,7 @@ body {
   font-size: 1.5rem;
 }
 
-/* Content */
+/* Main Content */
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
@@ -26,8 +26,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Heading */
-
+/* Text */
 h1,
 h2,
 h3,
@@ -41,16 +40,12 @@ h6 {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.text-primary {
-  color: #1D809F !important;
-}
-
 /* Navbar */
 .navbarcss {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/dogbackgroundnav.jpg");
 }
 
-/* Buttons */
+/* Button */
 .button {
   border-radius: 4px;
   background-color: #1D809F;
@@ -106,6 +101,33 @@ h6 {
 }
 
 
+/* Card Section */
+ .card-body {
+background: url("../img/puppy.jpg");
+background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+padding: 0px;
+} 
+
+
+.cardbackground {
+    background: url("../img/puppy.jpg");
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cardcontent {
+    background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4); 
+  color: white;
+  font-weight: bold;
+  z-index: 2;
+  text-align: center;
+
+}
+
 .masthead h1 {
   font-size: 4rem;
   margin: 0;
@@ -121,67 +143,7 @@ h6 {
   }
 }
 
-/* Card Sections */
- .card-body {
-background: url("../img/puppy.jpg");
-background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-padding: 0px;
-} 
-
-.cardbackground {
-    background: url("../img/puppy.jpg");
- background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.cardcontent {
-    background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  z-index: 2;
-  text-align: center;
-}
-
-:root {
-  --input-padding-x: 1.5rem;
-  --input-padding-y: .75rem;
-}
-
-
-.card-title {
-   font-size: 36px;
-    line-height: 40px;
-}
-
-.card-signin {
-  border: 0;
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-}
-
-.card-signin .card-title {
-  margin-bottom: 2rem;
-  font-weight: 300;
-  font-size: 1.5rem;
-}
-
-.card-signin .card-body {
-  padding: 2rem;
-}
-
-.card .intro-text {
-    font-size: 17px;
-    line-height: 30px;
-    margin: 0;
-    text-align: center;
-}
-
-/* Footer Sections */
-
+/* Footer */
 footer.footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -203,28 +165,68 @@ footer.footer .social-link:hover {
   text-decoration: none;
 }
 
-/* HTML Links */
+/* HTTP Link */
 a {
   color: #ffffff;
 }
 
-a:hover, a:focus, a:active {
-  color: #9cb2b9;
-}
-
-/* Carousel Text */
+/* Carousel */
 .carouseltext {
     color: #ffffff;
 }
 
-/* Make backgrounds blurry over image */
+/* Scrim for text over image */
 .scrim {
   border-radius: 0%;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5rem rgba(0, 0, 0.5);
 }
 
-/* Forms */
+a:hover, a:focus, a:active {
+  color: #9cb2b9;
+}
+
+
+.bg-primary {
+  background-color: #1D809F !important;
+}
+
+.text-primary {
+  color: #1D809F !important;
+}
+
+
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+/* Card Section */
+.card-title {
+   font-size: 36px;
+    line-height: 40px;
+}
+
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+/* Form Section */
+
 .form-signin {
   width: 100%;
 }
@@ -325,7 +327,15 @@ a:hover, a:focus, a:active {
   }
 }
 
- /* Background Image */
+.card .intro-text {
+    font-size: 17px;
+    line-height: 30px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Card Background Settings */
+
 .bg-image {
   background-image: url("../img/groom.jpg");
   filter: blur(8px);
@@ -336,10 +346,10 @@ a:hover, a:focus, a:active {
   background-size: cover;
 }
 
-/* Position text in the middle of the page/image */
+/* Position text in the middle of the page*/
 .bg-text {
   background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0, 0.4);
+  background-color: rgba(0,0,0, 0.4); 
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
@@ -353,18 +363,18 @@ a:hover, a:focus, a:active {
   text-align: center;
 }
 
-
-/* Table Text Color */
+/* Table */
 .table {
   color: white;
 }
-/* Icon Text Settings */
+
+/* Icon Text Settings*/
 .icontext {
     text-align: center;
     font-size: 15px;
 }
 
-/* Settings for image overlay */
+/* Overlay settings for  confirm page*/
 .containeroverlay {
   position: relative;
   
@@ -397,7 +407,7 @@ a:hover, a:focus, a:active {
   -ms-transform: translate(-50%, -50%);
 }
 
-/* Settings for Image Borders*/
+/* Image border also for Carousel*/
 .imageborder {
  display: block;
  background: transparent;
