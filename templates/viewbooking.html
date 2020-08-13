@@ -1,173 +1,136 @@
 {% extends 'base.html' %} {% block content %}
-
-
 <!-- Title Section -->
 <div class="row">
-  <div class="col-12"><h1>{{page_title}}</h1></div>
+	<div class="col-12"><h1>{{page_title}}</h1></div>
 </div>
 <!-- Left Card Section -->
 <div class="cardbackground ">
-  <div class="cardcontent">
-    <section class="mb-4">
-      <p class="text-center w-responsive mx-auto mb-5"></p>
-      
-      
-<div class="container">
-<div class="scrim">
-<div class="row">
-
-{% for doggiebook in doggiebook %}
-
-									<div class="table-responsive">
-                  
-									<div class="text-center">
-										<div class="row">
-
-										<div class="col-lg-1 mx-auto table-responsive-md">
-										  <table class="table table-hover">
+	<div class="cardcontent">
+		<section class="mb-4">
+			<p class="text-center w-responsive mx-auto mb-5"></p>
+			<div class="container">
+				<div class="scrim">
+					<div class="row">
+                    <!-- View of all bookings-->
+						{% for doggiebook in doggiebook %}
+						<div class="table-responsive">
+							<div class="text-center">
+								<div class="row">
+									<div class="col-lg-1 mx-auto table-responsive-md">
+										<table class="table table-hover">
 											<thead>
-											  <tr>
-												<th>
-												  <div><h3>Email</h3></div>
-												</th>
-											  </tr>
+												<tr>
+													<th>
+														<div><h3>Email</h3></div>
+													</th>
+												</tr>
 											</thead>
 											<tbody>
-											  <tr>
-												<th>
-												  
-												   <div> {{doggiebook.email_address}}</div>
-												  
-												</th>
-											  </tr>
-											</tbody>
-										  </table>
-										</div>
+												<tr>
+													<th>
 
-										
+														<div> {{doggiebook.email_address}}</div>
 
-										<div class="col-lg-1 mx-auto table-responsive-md">
-										  <table class="table table-hover">
-											<thead>
-											  <tr>
-												<th>
-												  <div class="mx-5"><h3>Pet</h3></div>
-												</th>
-											  </tr>
-											</thead>
-											<tbody>
-											  <tr>
-												<th>
-												  
-													<div class="mx-5">{{doggiebook.petname}}</div>
-												  
-												</th>
-											  </tr>
+													</th>
+												</tr>
 											</tbody>
-										  </table>
-										</div>
-
-										<div class="col-lg-1 mx-auto table-responsive-md">
-										  <table class="table table-hover">
-											<thead>
-											  <tr>
-												<th>
-												  <div><h3>Date</h3></div>
-												</th>
-											  </tr>
-											</thead>
-											<tbody>
-											  <tr>
-												<th>
-												  
-													<div >{{doggiebook.date}}</div>
-												  
-												</th>
-											  </tr>
-											</tbody>
-										  </table>
-										</div>
-
-										<div class="col-lg-1 mx-auto table-responsive-md">
-										  <table class="table table-hover">
-											<thead>
-											  <tr>
-												<th>
-												  <div><h3>Service</h3></div>
-												</th>
-											  </tr>
-											</thead>
-											<tbody>
-											  <tr>
-												<th>
-												
-													<div>{{doggiebook.service}}</div>
-												  
-												</th>
-											  </tr>
-											</tbody>
-										  </table>
-										</div>
-
-										<div class="col-lg-1 mx-auto table-responsive-md">
-										  <table class="table table-hover">
-											<thead>
-											  <tr>
-												<th>
-												  <div><a href="{{url_for('delete_booking', task_id=doggiebook._id)}}" class="button">Delete</a></div>
-												</th>
-											  </tr>
-											</thead>
-											<tbody>
-											  <tr>
-												<th>
-												  
-													<div><a href="{{url_for('edit_booking', task_id=doggiebook._id)}}" class="button">Edit</a></div>
-												  
-												</th>
-											  </tr>
-											</tbody>
-										  </table>
-										</div>
-          
-		  
-		  
-		  
+										</table>
 									</div>
+									<div class="col-lg-1 mx-auto table-responsive-md">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>
+														<div class="mx-5"><h3>Pet</h3></div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>
+														<div class="mx-5">{{doggiebook.petname}}</div>
+													</th>
+												</tr>
+											</tbody>
+										</table>
 									</div>
+									<div class="col-lg-1 mx-auto table-responsive-md">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>
+														<div><h3>Date</h3></div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>
+														<div >{{doggiebook.date}}</div>
+													</th>
+												</tr>
+											</tbody>
+										</table>
 									</div>
-              
-          
-								{% endfor %}
-
+									<div class="col-lg-1 mx-auto table-responsive-md">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>
+														<div><h3>Service</h3></div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>
+														<div>{{doggiebook.service}}</div>
+													</th>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="col-lg-1 mx-auto table-responsive-md">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+													<th>
+                                                    <!-- Delete Booking -->
+														<div><a href="{{url_for('delete_booking', task_id=doggiebook._id)}}" class="button">Delete</a></div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>
+                                                    <!-- Edit Booking -->
+														<div><a href="{{url_for('edit_booking', task_id=doggiebook._id)}}" class="button">Edit</a></div>
+													</th>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </div>
-</div>
-
-</div>
-
-
-
-
-    </section>
-  
-  </div>
-</div>
-
-
-
- <!--Return Home Section --> 
+<!--Return Home Section --> 
 <div class="cardbackground">
-  <div class="cardcontent">
-    <div class="d-flex bd-highlight">
-      <div class="p-2 flex-fill bd-highlight font-weight-bold">
-        <div><i class="fas fa-suitcase"></i></div>
-        <div>
-          <a href="{{ url_for('index') }}"> Click Here To Return Home</a>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="cardcontent">
+		<div class="d-flex bd-highlight">
+			<div class="p-2 flex-fill bd-highlight font-weight-bold">
+				<div><i class="fas fa-suitcase"></i></div>
+				<div>
+					<a href="{{ url_for('index') }}"> Click Here To Return Home</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-
 {% endblock %}

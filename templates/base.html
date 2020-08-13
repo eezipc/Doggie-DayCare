@@ -6,9 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
     <link rel="icon" href="../static/assets/img/doglogo.png" />
+
+      <!-- Website Title -->
     <title>Doggie Day Care</title>
+
+      <!-- Datepicker Script -->
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -67,10 +70,12 @@
   </head>
 
   <body id="page-top">
-    <!-- Navigation -->
+
+    <!-- Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbarcss static-top text-dark">
       <div class="container">
         <a class="navbar-brand" href="{{ url_for('index') }}">
+          <!-- Website Logo -->
           <img
             src="{{ url_for('static', filename='../static/assets/img/doglogo.png' ) }}"
             alt="Doggie Daycare"
@@ -98,7 +103,7 @@
               >
                 <span>Home </span>
               </button>
-              <span class="sr-only">(current)</span>
+              <span class="sr-only"></span>
             </li>
 
             <li class="nav-item">
@@ -133,7 +138,7 @@
                 <span>Prices </span>
               </button>
             </li>
-
+  <!-- Python Loop for buttons depending on user logged in or out-->
             {% if session.user %}
             <li class="nav-item">
               <button
@@ -175,7 +180,7 @@
       </div>
     </nav>
 
-    <!-- BODY -->
+    <!-- BODY Which incorporates all pages within blocks -->
     <div class="masthead d-flex">
       <div class="container text-center">
         {% block home %} {% endblock %} {% block content %} {% endblock %}
@@ -195,8 +200,6 @@
             </a>
             <div class="icontext font-weight-bold text-center">Facebook</div>
           </li>
-
-          
 
           <li class="list-inline-item">
             <a
@@ -226,7 +229,7 @@
             </a>
             <div class="icontext font-weight-bold text-center">Contact</div>
           </li>
-         <li class="list-inline-item">
+          <li class="list-inline-item">
             <a
               class="social-link rounded-circle text-white"
               href="{{ url_for('viewbooking') }}"
@@ -235,6 +238,7 @@
             </a>
             <div class="icontext font-weight-bold text-center">Bookings</div>
           </li>
+<!-- Python Loop for buttons depending on user logged in or out-->
 
           {% if session.user %}
 
@@ -292,6 +296,7 @@
     <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
       <i class="fas fa-angle-up"></i>
     </a>
+    
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"

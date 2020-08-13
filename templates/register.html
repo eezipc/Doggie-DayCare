@@ -4,7 +4,7 @@
   <div class="col-12"><h1>{{page_title}}</h1></div>
 </div>
 <!-- Left Card Section -->
-<div class="cardbackground ">
+<div class="cardbackground">
   <div class="cardcontent">
     <section class="mb-4">
       <p class="text-center w-responsive mx-auto mb-5"></p>
@@ -15,15 +15,17 @@
       >
       <div class="row">
         <div class="col-md-9 mb-md-0 mb-5 p-5">
-        <!-- Register Form Section -->
-         {% with messages = get_flashed_messages() %}
-{% if messages %}
-    <div class="notification is-danger">
-        {{ messages[0] }}
-    </div>
-{% endif %}
-{% endwith %}
-          <form method="POST" action="{{ url_for('register') }}" class="text-center border border-light p-5">
+          <!-- Register Form Section -->
+          {% with messages = get_flashed_messages() %} {% if messages %}
+          <div class="notification is-danger">
+            {{ messages[0] }}
+          </div>
+          {% endif %} {% endwith %}
+          <form
+            method="POST"
+            action="{{ url_for('register') }}"
+            class="text-center border border-light p-5"
+          >
             <div class="form-group">
               <label for="email_address">Enter Your Email Address</label>
               <input
@@ -74,7 +76,7 @@
             </button>
           </form>
         </div>
-<!-- Address and Number Section -->
+        <!-- Address and Number Section -->
         <div class="col-md-3 text-center">
           <ul class="list-unstyled mb-0">
             <li>
@@ -88,11 +90,8 @@
             </li>
           </ul>
         </div>
-
       </div>
     </section>
-  
   </div>
 </div>
-
 {% endblock %}
