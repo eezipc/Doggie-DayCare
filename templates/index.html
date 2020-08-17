@@ -2,20 +2,19 @@
 {% block home %}
 <!-- PAGE TITLE-->
 <div class="row">
-	<div class="col-12"><h1>{{page_title}}</h1></div>
+	<div class="col-12 display-4"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 </div>
 <!-- END PAGE TITLE-->
 <!-- lEFT CARD-->
 <div class="container"> 
 	<div class="row"> 
-		<div class="col-lg-6 mb-4"> 
+		<div class="col-lg-6 mb-4 pt-1"> 
 			<div class="card"> 
 				<img class="card-img-top "> 
 					<div class="cardbackground ">
-						<div class="cardcontent"> 
-							<h2 class="card-title"><i class="fas fa-paw"> Welcome to Doggie DayCare </i></h2>
+						<div class="cardcontent p-5"> 
+                     		<h3 class="card-title">We are a one stop shop for all your Doggie needs.</h3>
 							<p class="card-text"> 
-								<p>We are a one stop shop for all your Doggie needs.</p>
 								<p>We provide grooming, daycare and overnight services.</p>
 								<p> Click the links on the left for more info.</p>
 								<p> If you would like to contact us, click the contact button below.</p>
@@ -38,12 +37,12 @@
 				</div></div> 
 			<!-- END LEFT CARD-->
 			<!-- RIGHT CARD-->
-			<div class="col-lg-6 mb-4"> 
+			<div class="col-lg-6 mb-4 pt-1"> 
 				<div class="card"> 
 					<img class="card-img-top"> 
 						<div class="card-body"> 
 							{% for member in doggie %}
-							<div class="cardcontent">
+							<div class="cardcontent pt-5">
 								<h2 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
 								<p class="card-text"> 
 									<p>{{ member.description }}</p>

@@ -2,7 +2,7 @@
 <div class="container">
 	<!-- Title Section -->
 	<div class="row">
-		<div class="col-12"><h1>{{page_title}}</h1></div>
+		<div class="col-12 display-4 pb-1"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 	</div>
 	<div class="container">
 		<!-- Bootstrap Modal For Profile Delete -->
@@ -28,12 +28,13 @@
 		</div>
 	</div>
 	<!-- Left Card Section -->
-	<div class="cardbackground pt-3 imageborder">
-		<div class="cardcontent">
+	<div class="cardbackground">
+    <div class="scrim">
+		<div class="cardcontent imageborder">
 			<section class="mb-4">
 				<p class="text-center w-responsive mx-auto mb-5"></p>
 				<div><i class="fas fa-suitcase"></i></div>
-				<div>
+				<div class="pb-1">
 					<a href="{{ url_for('viewbooking') }}"> Click Here To View All Bookings</a>
 				</div>
 				<p>View Your Account Details Below</p>
@@ -70,6 +71,7 @@
 					</div>
 				</section>
 			</div>
+    </div>
 		</div>
 	</div>
 	{% endblock %}

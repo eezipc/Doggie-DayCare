@@ -2,19 +2,19 @@
 {% block content %}
 <!-- Title Section -->
 <div class="row">
-<div class="col-12"><h1>{{page_title}}</h1></div>
+<div class="col-12 display-4"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 </div>
 
 <!-- Left Card Section -->
 <div class="container"> 
     <div class="row"> 
-        <div class="col-lg-6 mb-4 "> 
+        <div class="col-lg-6 mb-4 pt-1 "> 
             <div class="card "> 
             <img class="card-img-top"> 
                 <div class="card-body "> 
                     <div class="cardbackground ">
                         <div class="cardcontent p-5">
-                            <h2 class="card-title">Book A Day Out For Your Doggie</h2> 
+                            <h3 class="card-title">Book A Day Out</h3> 
                             <p class="intro-text">Drop your dog off at Doggie Daycare safe in the knowledge that your dog will spend the day playing and socialising with lots of doggie friends. 
                             <br> A normal day is packed full of fun, where they will also learn vital skills such as bite inhibition, appropriate playing, build confidence and learn how to read other dogs’ body language to help communicate together. 
                             <br> No more bored, home alone dogs.</p>
@@ -52,14 +52,14 @@
                     </div>
                 </div>
             
-<div class="col-lg-6 mb-4"> 
+<div class="col-lg-6 mb-4 pt-1"> 
     <div class="card"> 
         <img class="card-img-top"> 
         <!-- Right Card Section -->
         <div class="card-body"> 
          <!-- Beginning Loop Section -->
                 {% for member in doggie %}
-                    <div class="cardcontent">
+                    <div class="cardcontent pt-5">
                         <h2 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
                         <p class="card-text"> 
                         <p>{{ member.description }}</p>

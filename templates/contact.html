@@ -1,12 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Page Title -->
 <div class="row">
-  <div class="col-12"><h1>{{page_title}}</h1></div>
+  <div class="col-12 display-4 pb-1"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 </div>
 <!-- Contact Section -->
-<div class="cardbackground">
-  <div class="cardcontent">
-    <section class="mb-4">
+<div class="cardbackground ">
+<div class="scrim">
+  <div class="cardcontent ">
+    <section class="mb-4 imageborder">
       <p class="text-center w-responsive mx-auto mb-5"></p>
       <p>Do you have any questions?</p>
       <p>Please do not hesitate to contact us directly.</p>
@@ -87,6 +88,7 @@
       </div>
     </section>
   </div>
+</div>
 </div>
 
 {% endblock %}

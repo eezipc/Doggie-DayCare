@@ -1,12 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <!-- Title Section -->
 <div class="row">
-  <div class="col-12"><h1>{{page_title}}</h1></div>
+  <div class="col-12 display-4 pb-1"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 </div>
 <!-- Left Card Section -->
 <div class="cardbackground">
   <div class="cardcontent">
-    <section class="mb-4">
+  <div class="scrim">
+    <section class="mb-4 imageborder">
       <p class="text-center w-responsive mx-auto mb-5"></p>
       <p>Would You Like To Register For Our Newsletter</p>
       <p>Please Register An Account Below</p>
@@ -92,6 +93,7 @@
         </div>
       </div>
     </section>
+  </div>
   </div>
 </div>
 {% endblock %}

@@ -2,18 +2,18 @@
 {% block content %}
 <!-- Title Section -->
 <div class="row">
-	<div class="col-12"><h1>{{page_title}}</h1></div>
+	<div class="col-12 display-4"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 </div>
 <!-- Left Card Section -->
 <div class="container"> 
 	<div class="row"> 
-		<div class="col-lg-6 mb-4"> 
+		<div class="col-lg-6 mb-4 pt-1"> 
 			<div class="card"> 
-				<img class="card-img-top" src="" alt=""> 
+				<img class="card-img-top"> 
 					<div class="card-body "> 
 						<div class="cardbackground">
 							<div class="cardcontent p-5"> 
-								<h2 class="card-title">Book A Night Stay For Your Doggie</h2> 
+								<h3 class="card-title">Book A Sleepover</h3> 
 								<p class="intro-text">We have a state of the art 5*Dog Hotel for our customers to avail of when it's time for them to go away on business or pleasure. 
 									<br>Dogs play away in daycare and stay in our luxury on-site hotel at the end of the day. 
 										<br>Dogs will be separated at night for their own safety, unless requested by customers with more than one dog.</p>
@@ -52,13 +52,13 @@
 											</div>
 										</div>
 										<!-- Right Card Section -->
-										<div class="col-lg-6 mb-4"> 
+										<div class="col-lg-6 mb-4 pt-1"> 
 											<div class="card"> 
 												<img class="card-img-top"> 
 													<div class="card-body "> 
 														<!-- Beginning of Loop Section -->
 														{% for member in doggie %}
-														<div class="cardcontent">
+														<div class="cardcontent pt-5">
 															<h2 class="card-title"><i class="fas fa-paw"></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
 															<p class="card-text"> 
 																<p>{{ member.description }}</p>

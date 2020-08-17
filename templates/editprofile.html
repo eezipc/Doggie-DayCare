@@ -3,7 +3,7 @@
 
 <!-- Title Section -->
 <div class="row">
-	<div class="col-12"><h1>{{page_title}}</h1></div>
+	<div class="col-12 display-4 pb-1"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 </div>
 <!-- Left Card Section -->
 <div class="container"> 
@@ -45,7 +45,7 @@
 															<input type="text" class="form-control" id="last_name"  name="last_name" value="{{task2.last_name}}">
 															</div>
 
-															<button type="submit" class="btn btn-primary">Edit Booking</button>
+															<button type="submit" class="btn btn-primary"><i class="fas fa-paw "> Edit Booking</i></button>
 														</form> <br>
 
 															
@@ -57,13 +57,13 @@
 										</div>
 
 										<!-- Right Card Section -->
-								<div class="col-lg-6 mb-4"> 
+								<div class="col-lg-6 mb-4 pt-1"> 
 									<div class="card"> 
 										<img class="card-img-top"> 
 											<div class="card-body p-0">
 												<!-- Beginning of Loop Section -->
 												{% for member in doggie %}
-												<div class="cardcontent">
+												<div class="cardcontent pt-5">
 													<h2 class="card-title"><i class="fas fa-paw "></i><a href="{{ member.url }}">  {{ member.service }}</a></h2> 
 													<p class="card-text"> 
 														<p>{{ member.description }}</p>
