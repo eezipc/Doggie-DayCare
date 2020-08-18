@@ -188,10 +188,10 @@ The design is simple with clear layouts providing easy access to book a service,
 * Site was tested on Windows 10 pc, 2 x android phones, iPhone 8, iPad mini, Android 10" tablet, Dell 13" laptop, Mac 13" laptop. 
 * Site was tested on Chrome, Firefox, Edge, Canary, Safari.
 * Site was also tested on Browserstack: www.browserstack.com
-* Site was tested with https://validator.w3.ori
+* Site was tested with https://validator.w3.org
 * Site was tested by https://jigsaw.w3.org/css-validator/
 * Python code was checked by http://pep8online.com/
-
+* There are a few errors but the code seems fine. (for example one section says it cannot find the bootstrap.min.css file but the link works.)
 
 ## Deployment
 
