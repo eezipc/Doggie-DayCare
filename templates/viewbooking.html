@@ -5,6 +5,8 @@
 <div class="row">
 	<div class="col-12 display-4 pb-1"><i class="fas fa-paw"> Welcome To {{page_title}} </i></div>
 </div>
+
+
 <!-- Left Card Section -->
 <div class="cardbackground">
 	<div class="cardcontent imageborder">
@@ -100,7 +102,7 @@
 													<th>
                                                     <!-- Delete Booking -->
 														<div><a href="{{url_for('delete_booking', task_id=doggiebook._id)}}" class="button">Delete</a></div>
-													</th>
+                                                        													</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -119,10 +121,12 @@
 						{% endfor %}
 					</div>
 				</div>
-			</div>
 		</section>
+    </div>
 	</div>
+	
 </div>
+
 <!--Return Home Section --> 
 <div class="cardbackground">
 	<div class="cardcontent imageborder">
@@ -138,6 +142,7 @@
 	</div>
 	</div>
 </div>
+
 </div>
 
 {% endblock %}

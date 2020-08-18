@@ -179,7 +179,7 @@ def updateprofile(email_address):
 def delete_profile(email_address):
     mongo.db.doggielogin.remove({"email_address": session["user"]})
     session.clear()
-    flash("Goodbye")
+    flash("")
     return redirect(url_for("index"))
 
 #Overnight Page
