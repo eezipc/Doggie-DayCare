@@ -233,7 +233,7 @@ SECRET_KEY 	<your_secret_key>
 * Got inspiration from this video: https://www.youtube.com/watch?v=vVx1737auSE
 * Got inspiration from this video: https://www.youtube.com/watch?v=3DMMPA3uxBo
 * Got inspiration from this video: https://www.youtube.com/watch?v=3ZS7LEH_XBg
-
+* I used some code from this site and edited it for my site. Mainly on how to register new users. https://github.com/andreeaiosip/click-a-book
 ## Media
 
 All images are provided by www.unsplash.com and www.pexels.com
