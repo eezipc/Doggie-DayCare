@@ -1,5 +1,5 @@
 
-
+import pymongo
 import os
 import json
 from flask import Flask, render_template, redirect, request, url_for, session, flash, Markup
@@ -9,9 +9,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
+app.config["MONGO_DBNAME"] = 'doggiedatabase'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
+
 											#Connect Database
-app.config['MONGO_DBNAME'] = 'doggiedatabase'
-app.config['MONGO_URI'] = 'mongodb+srv://doggieuser:doggiepassword@doggiecluster.wtitg.mongodb.net/doggiedatabase?retryWrites=true&w=majority'
+# app.config['MONGO_DBNAME'] = 'doggiedatabase'
+# app.config['MONGO_URI'] = 'mongodb+srv://doggieuser:doggiepassword@doggiecluster.wtitg.mongodb.net/doggiedatabase?retryWrites=true&w=majority'
 
 
 mongo = PyMongo(app)
