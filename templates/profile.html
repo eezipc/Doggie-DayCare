@@ -35,7 +35,7 @@
 				<p class="text-center w-responsive mx-auto mb-5"></p>
 				<div><i class="fas fa-suitcase"></i></div>
 				<div class="pb-1">
-					<a href="{{ url_for('viewbooking') }}"> Click Here To View All Bookings</a>
+					<a href="{{ url_for('viewprofilebooking', email_address=session['user'])}}"> Click Here To View Your Bookings</a>
 				</div>
 				<p>View Your Account Details Below</p>
 				<div>
