@@ -222,7 +222,6 @@ MONGO_URI 	mongodb+srv://<username>:<password>@doggiecluster.wtitg.mongodb.net/<
 PORT 	5000
 SECRET_KEY 	<your_secret_key>
 
-    
 9:  In the heroku dashboard, click "Deploy".
 
 10: In the "Manual Deployment" section, made sure the master branch is selected and then click "Deploy Branch".
@@ -231,6 +230,9 @@ SECRET_KEY 	<your_secret_key>
 
 ## Credits
 * Theme was taken from https://startbootstrap.com/themes/stylish-portfolio/
+* Got inspiration from this video: https://www.youtube.com/watch?v=vVx1737auSE
+* Got inspiration from this video: https://www.youtube.com/watch?v=3DMMPA3uxBo
+* Got inspiration from this video: https://www.youtube.com/watch?v=3ZS7LEH_XBg
 
 ## Media
 
@@ -240,4 +242,5 @@ All images are provided by www.unsplash.com and www.pexels.com
 
 * Most of the code was learnt from Youtube, Udemy, Le Wagon because the Code Institute videos were full of errors.
 * Got alot of help from stackexchange https://stackexchange.com/
+
 
