@@ -132,7 +132,7 @@ def profile(email_address):
 def logout():
     flash("You have been logged out..... Walkies?")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("index"))
 
 #View Profile Page
 @app.route("/viewprofile/<email_address>", methods=['GET', 'POST'])
