@@ -12,8 +12,9 @@ if path.exists("env.py"):
 
 app = Flask(__name__)
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
-MONGO_URI = os.environ.get("MONGO_URI")
+app.config["MONGO_DBNAME"] = os.environ.get('DATABASE')
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 											#Connect Database
 ## app.config['MONGO_DBNAME'] = 'doggiedatabase'
